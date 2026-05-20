@@ -65,6 +65,10 @@ app.use('/api/webhook', require('./routes/webhook'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/destinations', require('./routes/destinations'));
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
