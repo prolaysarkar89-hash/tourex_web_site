@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0f172a;
+  --primary: #15803d;
+  --primary-dark: #14532d;
+  --secondary-text: #4b5563;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary-text: var(--secondary-text);
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-inter);
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: var(--font-playfair);
+  }
+  
+  section {
+    scroll-margin-top: 80px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background-color: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+  }
+  
+  .btn-premium {
+    padding: 1.25rem 3.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--primary);
+    color: white;
+    display: inline-block;
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-0.25rem) scale(1.05);
+    background-color: var(--primary-dark);
+  }
+
+  .btn-outline-premium {
+    padding: 1.25rem 3.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    display: inline-block;
+  }
+
+  .btn-outline-premium:hover {
+    transform: translateY(-0.25rem) scale(1.05);
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .animate-fade-rise {
+    animation: fade-rise 0.8s ease-out forwards;
+  }
+
+  .animate-fade-rise-delay {
+    animation: fade-rise 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-rise-delay-2 {
+    animation: fade-rise 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
