@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...landingPages.map((page) => ({
       url: `${baseUrl}/${page}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
   ]
