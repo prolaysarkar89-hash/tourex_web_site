@@ -10,9 +10,9 @@ const Testimonials = () => {
       img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Priyanka Das",
-      role: "Creative Director",
-      text: "The Maenam trek was exactly what my soul needed. Waking up above the clouds is a feeling I can&apos;t put into words. Truly cinematic.",
+      name: "Sudipa Jana",
+      role: "Govt. Employee, Kolkata",
+      text: "Exploring Yelbong River Canyon with Tourex was an experience I’ll never forget. From the scenic trails to the peaceful river views, every moment felt perfectly curated and deeply refreshing. A true escape into nature.",
       img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
     }
   ];
