@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Customer {
+  id            String   @id @default(uuid())
+  phoneNumber   String   @unique
+  name          String?
+  lastInteraction DateTime @default(now())
+  handoffStatus String   @default("AI") // AI, HUMAN_SUPPORT_REQUIRED, HUMAN
+  metadata      String?  // SQLite doesn't support native Json, so we store as string
+  chats         Chat[]
+  leads         Lead[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Chat {
+  id          String   @id @default(uuid())
+  customerId  String
+  customer    Customer @relation(fields: [customerId], references: [id])
+  role        String   // 'user' or 'assistant'
+  content     String
+  type        String   @default("text") // text, image, etc.
+  whatsappId  String?  @unique
+  createdAt   DateTime @default(now())
+}
+
+model Lead {
+  id              String   @id @default(uuid())
+  customerId      String
+  customer        Customer @relation(fields: [customerId], references: [id])
+  destination     String?
+  travelDate      String?
+  groupSize       Int?
+  budget          String?
+  status          String   @default("PENDING") // PENDING, CONTACTED, BOOKED, CANCELLED
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Package {
+  id            String      @id @default(uuid())
+  title         String
+  description   String
+  price         Float
+  duration      String?
+  location      String
+  category      String?     // Trekking, Village, Adventure, etc.
+  isTrending    Boolean     @default(false)
+  images        String?     // SQLite doesn't support String[], store as JSON string
+  inclusions    String?     // Store as JSON string
+  exclusions    String?     // Store as JSON string
+  itineraries   Itinerary[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model Itinerary {
+  id          String   @id @default(uuid())
+  packageId   String
+  package     Package  @relation(fields: [packageId], references: [id])
+  day         Int
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AILog {
+  id          String   @id @default(uuid())
+  prompt      String
+  response    String
+  tokensUsed  Int?
+  model       String?
+  createdAt   DateTime @default(now())
+}
