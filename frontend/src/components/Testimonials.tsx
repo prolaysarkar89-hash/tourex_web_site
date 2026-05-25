@@ -5,7 +5,7 @@ const Testimonials = () => {
   const reviews = [
     {
       name: "Bhaskar Paul",
-      role: "Travel Enthusiast, Siliguri",
+      role: "Travel Enthusiast, Jalpaiguri",
       text: "Exploring Kaffergaon with Tourex felt like stepping into a hidden paradise above the clouds. The peaceful mountain views, cozy village vibes, and refreshing nature made every moment unforgettable. A perfect getaway to reconnect with nature and yourself.",
       img: "/images/Bhaskar.jpeg"
     },
