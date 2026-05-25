@@ -28,49 +28,49 @@ const Navbar = () => {
   };
 
   const navBg = scrolled 
-    ? (isDarkPage ? "bg-black/80 backdrop-blur-lg border-b border-white/10" : "bg-white/90 backdrop-blur-md shadow-sm")
+    ? (isDarkPage ? "bg-black/90 backdrop-blur-sm border-b border-white/10" : "bg-white/95 backdrop-blur-sm shadow-none")
     : "bg-transparent";
 
   const textColor = isDarkPage 
-    ? (scrolled ? "text-white" : "text-white/90")
+    ? (scrolled ? "text-white" : "text-white")
     : (scrolled ? "text-[#0f172a]" : "text-[#0f172a]");
 
   const subTextColor = isDarkPage ? "text-gray-400" : "text-gray-500";
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 ${navBg}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 ${navBg}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
         <div className="flex flex-col cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-          <span className={`font-display text-2xl md:text-3xl font-black tracking-tighter transition-colors duration-500 ${textColor}`}>
+          <span className={`font-display text-2xl md:text-3xl font-black tracking-tighter transition-colors duration-300 ${textColor}`}>
             TOUREX
           </span>
-          <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold -mt-1 transition-colors duration-500 ${subTextColor}`}>
+          <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold -mt-1 transition-colors duration-300 ${subTextColor}`}>
             Stress-Free North Bengal Escapes
           </span>
         </div>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 items-center">
-          <Link href="/" className={`text-sm font-bold transition-colors duration-500 ${pathname === '/' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
             Home
           </Link>
-          <Link href="/packages" className={`text-sm font-bold transition-colors duration-500 ${pathname === '/packages' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/packages" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/packages' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
             Packages
           </Link>
-          <button onClick={() => scrollTo('about')} className={`text-sm font-bold hover:text-[#D4AF37] transition-colors duration-500 ${textColor}`}>
+          <button onClick={() => scrollTo('about')} className={`text-sm font-semibold hover:text-[#D4AF37] transition-colors duration-300 ${textColor}`}>
             About
           </button>
-          <button onClick={() => scrollTo('trust')} className={`text-sm font-bold hover:text-[#D4AF37] transition-colors duration-500 ${textColor}`}>
+          <button onClick={() => scrollTo('trust')} className={`text-sm font-semibold hover:text-[#D4AF37] transition-colors duration-300 ${textColor}`}>
             Why Us
           </button>
-          <Link href="/join-us" className={`text-sm font-bold transition-colors duration-500 ${pathname === '/join-us' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/join-us" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/join-us' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
             Join Us
           </Link>
           
           <Link 
             href="https://wa.me/918768683198" 
             target="_blank" 
-            className={`rounded-full px-6 py-2.5 text-sm font-bold hover:scale-105 transition-all shadow-lg ${
+            className={`rounded-full px-6 py-2 text-sm font-bold hover:scale-105 transition-all ${
               isDarkPage ? "bg-[#D4AF37] text-black" : "bg-green-700 text-white"
             }`}
           >
