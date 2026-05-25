@@ -115,9 +115,9 @@ export default function JoinUsPage() {
 
           <div>
             <img
-              src="https://images.unsplash.com/photo-1622321458045-3164a66a3d6d?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80"
               className="rounded-[32px] shadow-2xl"
-              alt="Darjeeling Hills"
+              alt="Darjeeling Hills and Tea Garden"
             />
           </div>
         </div>
