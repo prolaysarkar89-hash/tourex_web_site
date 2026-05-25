@@ -6,7 +6,7 @@ const Testimonials = () => {
     {
       name: "Arjun Mehta",
       role: "Software Engineer, Kolkata",
-      text: "Yelbong was surreal. I&apos;ve never seen such raw beauty so close to home. Tourex made the logistics invisible so I could just focus on the canyon.",
+      text: "Exploring Kaffergaon with Tourex felt like stepping into a hidden paradise above the clouds. The peaceful mountain views, cozy village vibes, and refreshing nature made every moment unforgettable. A perfect getaway to reconnect with nature and yourself.",
       img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
     },
     {
