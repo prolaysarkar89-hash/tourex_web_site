@@ -8,7 +8,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isDarkPage = pathname === '/packages';
+  const isDarkPage = pathname === '/packages' || pathname === '/join-us';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,6 +63,9 @@ const Navbar = () => {
           <button onClick={() => scrollTo('trust')} className={`text-sm font-bold hover:text-[#D4AF37] transition-colors duration-500 ${textColor}`}>
             Why Us
           </button>
+          <Link href="/join-us" className={`text-sm font-bold transition-colors duration-500 ${pathname === '/join-us' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+            Join Us
+          </Link>
           
           <Link 
             href="https://wa.me/918768683198" 
@@ -90,6 +93,7 @@ const Navbar = () => {
           <Link href="/packages" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Packages</Link>
           <button onClick={() => scrollTo('about')} className={`text-2xl font-black ${textColor}`}>About</button>
           <button onClick={() => scrollTo('trust')} className={`text-2xl font-black ${textColor}`}>Why Us</button>
+          <Link href="/join-us" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Join Us</Link>
           <Link 
             href="https://wa.me/918768683198" 
             target="_blank" 
