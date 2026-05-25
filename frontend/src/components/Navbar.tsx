@@ -36,8 +36,8 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 items-center">
-          <button onClick={() => scrollTo('home')} className="text-sm font-medium text-black">Home</button>
-          <button onClick={() => scrollTo('experiences')} className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Experiences</button>
+          <Link href="/" className="text-sm font-medium text-black">Home</Link>
+          <Link href="/packages" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Packages</Link>
           <button onClick={() => scrollTo('about')} className="text-sm font-medium text-gray-500 hover:text-black transition-colors">About</button>
           <button onClick={() => scrollTo('trust')} className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Why Us</button>
           
@@ -61,8 +61,8 @@ const Navbar = () => {
         isOpen ? "translate-x-0" : "translate-x-full"
       } md:hidden`}>
         <div className="flex flex-col h-full justify-center items-center gap-8 p-10">
-          <button onClick={() => scrollTo('home')} className="text-2xl font-black text-[#0f172a]">Home</button>
-          <button onClick={() => scrollTo('experiences')} className="text-2xl font-black text-[#0f172a]">Experiences</button>
+          <Link href="/" className="text-2xl font-black text-[#0f172a]" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link href="/packages" className="text-2xl font-black text-[#0f172a]" onClick={() => setIsOpen(false)}>Packages</Link>
           <button onClick={() => scrollTo('about')} className="text-2xl font-black text-[#0f172a]">About</button>
           <button onClick={() => scrollTo('trust')} className="text-2xl font-black text-[#0f172a]">Why Us</button>
           <Link 

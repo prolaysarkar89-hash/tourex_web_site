@@ -95,8 +95,8 @@ const Hero = () => {
         </p>
 
         <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 mb-16">
-          <Link href="#experiences" className="btn-premium">
-            Explore Experiences
+          <Link href="/packages" className="btn-premium">
+            Explore Packages
           </Link>
           <Link href="https://wa.me/918768683198" target="_blank" className="btn-outline-premium bg-white/50 backdrop-blur-sm">
             WhatsApp Us

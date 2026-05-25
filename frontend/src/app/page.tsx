@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Experiences from "@/components/Experiences";
 import About from "@/components/About";
 import Trust from "@/components/Trust";
 import Storytelling from "@/components/Storytelling";
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <About />
       <Storytelling />
-      <Experiences />
       <Trust />
       <Testimonials />
       <FAQ />
