@@ -45,9 +45,9 @@ export default function JoinUsPage() {
       {/* HERO */}
       <section className="relative h-[90vh] overflow-hidden flex items-center justify-center">
         <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1581390212720-639535798993?auto=format&fit=crop&w=1920&q=80"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
-          alt="Community Network"
+          alt="North Bengal Tea Garden"
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black" />
@@ -115,9 +115,9 @@ export default function JoinUsPage() {
 
           <div>
             <img
-              src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1622321458045-3164a66a3d6d?auto=format&fit=crop&w=1200&q=80"
               className="rounded-[32px] shadow-2xl"
-              alt="Collaboration"
+              alt="Darjeeling Hills"
             />
           </div>
         </div>
@@ -190,9 +190,9 @@ export default function JoinUsPage() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1200&auto=format&fit=crop"
-              className="rounded-[32px] shadow-2xl"
-              alt="Training Program"
+              src="/images/guide.jpeg"
+              className="rounded-[32px] shadow-2xl w-full h-[600px] object-cover"
+              alt="Tourex Local Guide Training"
             />
           </div>
 
@@ -238,9 +238,9 @@ export default function JoinUsPage() {
       {/* CTA */}
       <section className="relative py-28 px-6 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1400&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1400&q=80"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
-          alt="Grow Together"
+          alt="North Bengal River"
         />
 
         <div className="absolute inset-0 bg-black/70" />
