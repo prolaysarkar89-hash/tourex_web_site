@@ -1,138 +1,295 @@
 "use client";
-import React, { useEffect, useState, useCallback } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
-import axios from 'axios';
-import { Clock, MapPin, ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-
-interface Experience {
-  id?: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  region: string;
-  type: string;
-  tagline: string;
-  duration: string;
-  inclusions: string[];
-}
 
 export default function PackagesPage() {
-  const [experiences, setExperiences] = useState<Experience[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchExperiences = useCallback(async () => {
-    try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      const res = await axios.get(`${apiUrl}/api/destinations`);
-      setExperiences(res.data);
-    } catch (err) {
-      console.error("Error fetching experiences", err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchExperiences();
-  }, [fetchExperiences]);
+  const packages = [
+    {
+      name: "Lava",
+      subtitle: "Cloudy Pine Forest Escape",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop",
+      highlights: ["Pine Forest", "Monastery", "Foggy Weather", "Nature Stay"],
+      price: "Starting From ₹1400",
+    },
+    {
+      name: "Rishop",
+      subtitle: "Land Of Serenity",
+      image:
+        "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop",
+      highlights: ["Kanchenjunga Views", "Sunrise", "Peaceful Stay", "Mountain Trails"],
+      price: "Starting From ₹1500",
+    },
+    {
+      name: "Charkhole",
+      subtitle: "Hidden Paradise Of Kalimpong",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      highlights: ["Bonfire", "Pine Forest", "Homestay", "Photography"],
+      price: "Starting From ₹1300",
+    },
+    {
+      name: "Yelbong River Canyon",
+      subtitle: "Adventure Beyond The Mountains",
+      image:
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
+      highlights: ["River Canyon", "Adventure Trek", "Hanging Bridge", "Water Streams"],
+      price: "Adventure Packages Available",
+    },
+    {
+      name: "Lepchajagat",
+      subtitle: "Forest Above The Clouds",
+      image:
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop",
+      highlights: ["Foggy Forest", "Kanchenjunga View", "Silent Nature", "Cozy Stay"],
+      price: "Starting From ₹1600",
+    },
+    {
+      name: "Lataguri",
+      subtitle: "Where Wilderness Welcomes You",
+      image:
+        "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1200&auto=format&fit=crop",
+      highlights: ["Elephant Safari", "Wildlife", "Forest Trails", "Nature Escape"],
+      price: "Custom Packages Available",
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="bg-[#0B1210] text-white min-h-screen font-sans">
       <Navbar />
       
-      <div className="pt-32 pb-20 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <Link href="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#15803d] transition-colors mb-8 group">
-            <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">Back to Home</span>
-          </Link>
-          
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-black tracking-tight text-[#0f172a] mb-6">
-              Our Curated <span className="text-[#15803d]">Packages</span>
-            </h1>
-            <p className="text-xl text-slate-600 font-medium leading-relaxed">
-              Explore the hidden gems of North Bengal and Sikkim. From misty mountains to lush tea gardens, choose your next unforgettable journey.
-            </p>
+      {/* HERO SECTION */}
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          alt="North Bengal Mountains"
+        />
+
+        <div className="relative z-10 text-center px-6 max-w-4xl">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
+            TOUREX
+          </h1>
+
+          <p className="mt-4 text-xl md:text-2xl text-gray-200 italic">
+            Stress-Free North Bengal Escapes
+          </p>
+
+          <div className="mt-10 flex justify-center gap-4 flex-wrap">
+            <button 
+              onClick={() => document.getElementById('featured-packages')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl"
+            >
+              Explore Packages
+            </button>
+
+            <Link href="https://wa.me/918768683198" target="_blank" className="border border-white/30 backdrop-blur-md px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+              Contact Us
+            </Link>
           </div>
-        </div>
-      </div>
-
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          {loading ? (
-            <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#15803d]"></div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {experiences.map((exp) => (
-                <div 
-                  key={exp.id} 
-                  className="group bg-white border border-slate-100 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
-                >
-                  <div className="relative h-72 overflow-hidden">
-                    <Image 
-                      src={exp.image} 
-                      alt={exp.name} 
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-[#15803d] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-sm">
-                      {exp.type}
-                    </span>
-                  </div>
-                  
-                  <div className="p-8 flex flex-col flex-grow">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-display font-black text-[#0f172a] leading-tight group-hover:text-[#15803d] transition-colors">
-                        {exp.name}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-[#15803d] font-bold mb-3 text-xs uppercase tracking-widest">{exp.tagline}</p>
-                    <p className="text-slate-600 text-sm mb-6 leading-relaxed line-clamp-3">
-                      {exp.description}
-                    </p>
-                    
-                    <div className="flex items-center gap-6 mb-8 mt-auto pt-6 border-t border-slate-50">
-                      <div className="flex items-center gap-2 text-slate-400">
-                        <Clock size={16} className="text-[#15803d]" />
-                        <span className="text-xs font-bold uppercase tracking-wider">{exp.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-slate-400">
-                        <MapPin size={16} className="text-[#15803d]" />
-                        <span className="text-xs font-bold uppercase tracking-wider">{exp.region}</span>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <span className="text-[10px] text-slate-400 block font-black uppercase tracking-[0.2em] mb-1">Total Package</span>
-                        <span className="text-2xl font-black text-[#0f172a]">₹{exp.price}</span>
-                      </div>
-                      <Link 
-                        href={`https://wa.me/918768683198?text=Hi Tourex! I'm interested in the ${exp.name} package.`}
-                        target="_blank"
-                        className="rounded-2xl bg-[#0f172a] text-white px-8 py-4 text-sm font-black hover:bg-[#15803d] transition-all transform active:scale-95 shadow-lg shadow-slate-200"
-                      >
-                        Book Now
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
-      <Footer />
-    </main>
+      {/* ABOUT */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div>
+            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm mb-3">
+              About Tourex
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              Cinematic Travel Experiences Across North Bengal
+            </h2>
+
+            <p className="mt-6 text-gray-300 text-lg leading-relaxed">
+              TOUREX is a North Bengal based travel brand focused on
+              meaningful offbeat experiences, cinematic storytelling and
+              stress-free mountain escapes.
+            </p>
+
+            <div className="mt-8 grid grid-cols-2 gap-5">
+              <div className="bg-white/5 rounded-3xl p-5 border border-white/10">
+                <h3 className="text-3xl font-bold text-[#D4AF37]">15+</h3>
+                <p className="text-gray-300 mt-2">Offbeat Destinations</p>
+              </div>
+
+              <div className="bg-white/5 rounded-3xl p-5 border border-white/10">
+                <h3 className="text-3xl font-bold text-[#D4AF37]">24/7</h3>
+                <p className="text-gray-300 mt-2">Travel Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop"
+              className="rounded-[32px] shadow-2xl"
+              alt="Mountain View"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* PACKAGES */}
+      <section id="featured-packages" className="px-6 pb-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+              Featured Packages
+            </p>
+
+            <h2 className="text-5xl font-bold mt-4">
+              Explore North Bengal With TOUREX
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.name}
+                className="bg-white/5 border border-white/10 rounded-[28px] overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-xl"
+              >
+                <div className="relative h-72 overflow-hidden">
+                  <img
+                    src={pkg.image}
+                    className="w-full h-full object-cover hover:scale-110 transition-all duration-700"
+                    alt={pkg.name}
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                  <div className="absolute bottom-5 left-5">
+                    <h3 className="text-3xl font-bold">{pkg.name}</h3>
+                    <p className="text-gray-200 mt-1">{pkg.subtitle}</p>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {pkg.highlights.map((item) => (
+                      <span
+                        key={item}
+                        className="bg-[#D4AF37]/10 text-[#D4AF37] text-sm px-3 py-1 rounded-full border border-[#D4AF37]/20"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between mt-6">
+                    <div>
+                      <p className="text-gray-400 text-sm">Package</p>
+                      <h4 className="text-xl font-semibold mt-1">
+                        {pkg.price}
+                      </h4>
+                    </div>
+
+                    <Link 
+                      href={`https://wa.me/918768683198?text=Hi Tourex! I'm interested in the ${pkg.name} package.`}
+                      target="_blank"
+                      className="bg-[#D4AF37] text-black px-5 py-3 rounded-full font-semibold hover:scale-105 transition-all"
+                    >
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY TOUREX */}
+      <section className="bg-[#101916] py-24 px-6 border-y border-white/10">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            Why Choose Tourex
+          </p>
+
+          <h2 className="text-5xl font-bold mt-4">
+            More Than Just A Travel Company
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-6 mt-14">
+            {[
+              "Local Trusted Guides",
+              "Offbeat Hidden Destinations",
+              "Comfortable Stays",
+              "Stress-Free Travel Experience",
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-white/5 rounded-3xl p-8 border border-white/10"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 mx-auto mb-5 flex items-center justify-center text-[#D4AF37] text-2xl">
+                  ✦
+                </div>
+
+                <p className="text-lg text-gray-200">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-28 px-6 text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+            className="w-full h-full object-cover"
+            alt="Nature Background"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            Let’s Travel Together
+          </p>
+
+          <h2 className="text-5xl md:text-6xl font-black leading-tight mt-5">
+            Escape The Routine.
+            <br />
+            Embrace Nature.
+          </h2>
+
+          <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
+            Explore the hidden beauty of North Bengal with cinematic mountain
+            experiences curated by TOUREX.
+          </p>
+
+          <div className="mt-10 flex justify-center gap-4 flex-wrap">
+            <Link href="/packages" className="bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl">
+              Book Your Escape
+            </Link>
+
+            <Link href="https://wa.me/918768683198" target="_blank" className="border border-white/20 px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+              WhatsApp Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-white/10 py-10 px-6 bg-black/30">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+          <div>
+            <h3 className="text-2xl font-black">TOUREX</h3>
+            <p className="text-gray-400 mt-1">
+              Stress-Free North Bengal Escapes
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-6 text-gray-300 text-sm">
+            <span>📞 8116413984</span>
+            <span>📞 8768683198</span>
+            <span>📸 @tou.rex</span>
+            <span>📧 tourex.officials@gmail.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
