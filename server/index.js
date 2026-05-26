@@ -64,6 +64,7 @@ app.use('/api/', apiLimiter);
 app.use('/api/webhook', require('./routes/webhook'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/destinations', require('./routes/destinations'));
+app.use('/api/search', require('./routes/search'));
 
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {

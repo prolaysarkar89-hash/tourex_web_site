@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
+import SearchBar from './SearchBar';
 
 const visuals = [
   {
@@ -93,6 +94,8 @@ const Hero = () => {
         <p className="animate-fade-rise-delay text-base sm:text-lg text-[#4b5563] max-w-2xl mx-auto leading-relaxed">
           From hidden river canyons to luxury Dooars jungle safaris, Tourex helps you experience North Bengal beyond tourist spots — slow, local, and real.
         </p>
+
+        <SearchBar />
 
         <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 mb-16">
           <Link href="/packages" className="btn-premium">
