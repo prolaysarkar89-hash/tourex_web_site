@@ -10,9 +10,10 @@ export const metadata: Metadata = {
 export default function DarjeelingPage() {
   return (
     <PackagePage 
-      title="Darjeeling Tour Package"
-      description="Step into the misty charm of the 'Queen of Hills'. Witness the first light of dawn painting the Kanchenjunga in gold and wander through emerald tea gardens that stretch beyond the horizon."
-      places={["Tiger Hill", "Batasia Loop", "Ghoom Monastery", "Japanese Peace Pagoda", "Himalayan Mountaineering Institute", "Nightingale Park"]}
+      title="Darjeeling Tour Package 2026: The Queen of Hills"
+      description="Tourex offers curated Darjeeling tour packages including heritage tea garden stays, Himalayan Railway toy train rides, and the legendary Tiger Hill sunrise. Our 2026 packages feature private transport from Siliguri and local expertise for a stress-free Himalayan escape."
+      image="https://images.unsplash.com/photo-1626696716912-42da0938c66e?auto=format&fit=crop&w=1200&q=80"
+      places={["Tiger Hill Sunrise", "Batasia Loop", "Ghoom Monastery", "Japanese Peace Pagoda", "Himalayan Mountaineering Institute", "Happy Valley Tea Estate"]}
       itinerary={[
         { day: "Day 1: Arrival in Darjeeling", description: "Meet our representative at NJP/Bagdogra and enjoy a scenic drive through winding hills to Darjeeling." },
         { day: "Day 2: Tiger Hill & Local Tour", description: "Early morning sunrise at Tiger Hill. Visit Batasia Loop, Ghoom Monastery, and the Himalayan Mountaineering Institute." },

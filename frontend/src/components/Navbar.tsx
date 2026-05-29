@@ -57,6 +57,9 @@ const Navbar = () => {
           <Link href="/packages" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/packages' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
             Packages
           </Link>
+          <Link href="/blog" className={`text-sm font-semibold transition-colors duration-300 ${pathname?.startsWith('/blog') ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+            Blog
+          </Link>
           <button onClick={() => scrollTo('about')} className={`text-sm font-semibold hover:text-[#D4AF37] transition-colors duration-300 ${textColor}`}>
             About
           </button>
@@ -91,6 +94,7 @@ const Navbar = () => {
         <div className="flex flex-col h-full justify-center items-center gap-8 p-10">
           <Link href="/" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/packages" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Packages</Link>
+          <Link href="/blog" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Blog</Link>
           <button onClick={() => scrollTo('about')} className={`text-2xl font-black ${textColor}`}>About</button>
           <button onClick={() => scrollTo('trust')} className={`text-2xl font-black ${textColor}`}>Why Us</button>
           <Link href="/join-us" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Join Us</Link>

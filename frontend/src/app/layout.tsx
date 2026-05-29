@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.tourextravel.com"),
 
   title: {
-    default: "Tourex - North Bengal & Dooars Tour Packages",
-    template: "%s | Tourex",
+    default: "Tourex - Best North Bengal & Dooars Tour Packages from Siliguri",
+    template: "%s | Tourex Travel Agency",
   },
 
   description:
-    "Explore Dooars, Darjeeling, Sikkim and North Bengal with Tourex travel agency. Affordable tour packages, luxury stays, jungle safari and customized tours.",
+    "Book affordable Dooars, Darjeeling, Sikkim and North Bengal tour packages with Tourex. Expert travel agency in Siliguri for jungle safari, luxury stays and customized tours.",
 
   keywords: [
     "North Bengal tour package",
@@ -25,17 +25,21 @@ export const metadata: Metadata = {
     "Darjeeling package",
     "Sikkim tour",
     "Silk Route tour",
-    "Lataguri resort",
+    "Lataguri resort booking",
     "North Bengal travel agency",
-    "Tour operator in Siliguri",
-    "Dooars jungle safari",
-    "Tourex"
+    "Best tour operator in Siliguri",
+    "Dooars jungle safari booking",
+    "Tourex Siliguri"
   ],
 
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
-    title: "Tourex Travel Agency",
+    title: "Tourex - Premium North Bengal & Dooars Tour Packages",
     description:
-      "Best North Bengal, Dooars & Darjeeling tour packages.",
+      "Experience the raw beauty of the Himalayas with the best tour operator in Siliguri.",
     url: "https://www.tourextravel.com",
     siteName: "Tourex",
     images: [
@@ -43,6 +47,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "Tourex Travel Agency - North Bengal Tours"
       },
     ],
     locale: "en_IN",
@@ -51,15 +56,22 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Tourex Travel",
+    title: "Tourex - North Bengal Tour Packages",
     description:
-      "Affordable and luxury North Bengal tour packages.",
+      "Affordable and luxury North Bengal tour packages. Local expertise, real experiences.",
     images: ["/og-image.jpg"],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -80,22 +92,45 @@ export default function RootLayout({
               "name": "Tourex",
               "url": "https://www.tourextravel.com",
               "logo": "https://www.tourextravel.com/logo.png",
-              "description": "North Bengal and Dooars travel agency offering Darjeeling, Sikkim, Silk Route and jungle safari packages.",
-              "areaServed": [
-                "North Bengal",
-                "Dooars",
-                "Darjeeling",
-                "Sikkim"
-              ],
+              "image": "https://www.tourextravel.com/og-image.jpg",
+              "description": "Premium North Bengal and Dooars travel agency in Siliguri offering Darjeeling, Sikkim, Silk Route and jungle safari packages.",
+              "telephone": "+91-8768683198",
+              "priceRange": "₹₹",
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Sevoke Road",
                 "addressLocality": "Siliguri",
                 "addressRegion": "West Bengal",
+                "postalCode": "734001",
                 "addressCountry": "India"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "26.7271",
+                "longitude": "88.3953"
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "21:00"
               },
               "sameAs": [
                 "https://instagram.com/tourex",
                 "https://facebook.com/tourex"
+              ],
+              "areaServed": [
+                { "@type": "State", "name": "West Bengal" },
+                { "@type": "State", "name": "Sikkim" },
+                { "@type": "Country", "name": "Bhutan" }
               ]
             })
           }}

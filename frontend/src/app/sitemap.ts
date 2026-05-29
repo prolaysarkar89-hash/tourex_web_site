@@ -16,6 +16,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'honeymoon-tour-package',
   ]
 
+  const blogPosts = [
+    'blog',
+    'blog/njp-to-darjeeling-taxi-fare',
+    'blog/best-time-to-visit-dooars-safari',
+    'blog/budget-bhutan-trip-from-india',
+    'blog/offbeat-north-bengal-destinations',
+  ]
+
   const sitemapEntries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -28,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+    })),
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/${post}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     })),
   ]
   

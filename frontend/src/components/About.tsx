@@ -55,23 +55,23 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-[#4b5563] leading-relaxed">
               <p className="about-reveal">
-                At Tourex, we believe travel should be an antidote to modern life. We don&apos;t sell itineraries; we curate escapes that recalibrate your senses.
+                At Tourex, we believe travel should be an antidote to modern life. We don&apos;t just sell itineraries; we curate escapes that recalibrate your senses and connect you with the raw beauty of the Himalayas.
               </p>
               <p className="about-reveal">
-                Born in the heart of North Bengal, our team of local explorers identifies hidden canyons, offbeat trails, and quiet hill retreats that you won&apos;t find on any generic travel portal.
+                <strong>Based in Siliguri</strong>, the gateway to the North East, our team of local explorers identifies hidden river canyons, offbeat Darjeeling trails, and quiet hill retreats in Sikkim that you won&apos;t find on any generic travel portal.
               </p>
               <p className="about-reveal">
-                From the first sunrise over Kanchenjunga to the last campfire in the Dooars, we ensure every moment is stress-free, cinematic, and deeply authentic.
+                Whether it&apos;s a <strong>Dooars jungle safari</strong> in Lataguri, a spiritual hike to <strong>Tiger&apos;s Nest</strong>, or a luxury escape in the tea gardens, we ensure every moment is stress-free, cinematic, and deeply authentic to the local culture.
               </p>
             </div>
             
-            <div className="about-reveal mt-12 grid grid-cols-2 gap-8">
+            <div className="about-reveal mt-12 grid grid-cols-2 gap-8 border-t border-gray-100 pt-12">
               <div>
-                <h4 className="text-3xl font-black text-[#0f172a] mb-2">100+</h4>
-                <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Local Spots</p>
+                <h4 className="text-3xl font-black text-[#15803d] mb-2">10+ Years</h4>
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Local Expertise</p>
               </div>
               <div>
-                <h4 className="text-3xl font-black text-[#0f172a] mb-2">500+</h4>
+                <h4 className="text-3xl font-black text-[#15803d] mb-2">5,000+</h4>
                 <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Happy Travelers</p>
               </div>
             </div>
