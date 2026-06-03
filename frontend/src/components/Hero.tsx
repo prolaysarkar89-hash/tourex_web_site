@@ -57,6 +57,13 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 bg-black/20" />
 
       <div className="relative z-20 px-6 max-w-7xl mx-auto pt-40 pb-12 flex flex-col items-center">
+        <Image 
+          src="/images/Logo.jpeg" 
+          alt="Tourex Logo" 
+          width={80} 
+          height={80} 
+          className="rounded-2xl shadow-2xl mb-8 animate-fade-rise"
+        />
         <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl font-display font-black tracking-[-2px] leading-[0.95] text-white mb-4 drop-shadow-2xl">
           North Bengal & <br />
           <span className="text-[#22c55e]">Dooars Tour Packages.</span>
