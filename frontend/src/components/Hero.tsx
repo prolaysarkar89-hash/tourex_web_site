@@ -35,7 +35,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-[#0f172a]">
+    <section id="home" className="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-[#020617]">
       {/* Cinematic Ken Burns Background */}
       <div 
         ref={mountainRef}
@@ -46,53 +46,51 @@ const Hero = () => {
           alt={visuals[0].title}
           fill
           priority
-          className="object-cover opacity-60"
+          className="object-cover opacity-50"
           sizes="100vw"
-          quality={95}
+          quality={100}
         />
       </div>
       
       {/* Advanced Gradient Overlays for Cinematic Depth */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0f172a]/80 via-transparent to-[#0f172a]/90" />
-      <div className="absolute inset-0 z-10 bg-black/20" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#020617]/90 via-transparent to-[#020617]/95" />
+      <div className="absolute inset-0 z-10 bg-black/40" />
 
-      <div className="relative z-20 px-6 max-w-7xl mx-auto pt-40 pb-12 flex flex-col items-center">
-        <Image 
-          src="/images/Logo.jpeg" 
-          alt="Tourex Logo" 
-          width={80} 
-          height={80} 
-          className="rounded-2xl shadow-2xl mb-8 animate-fade-rise"
-        />
-        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl font-display font-black tracking-[-2px] leading-[0.95] text-white mb-4 drop-shadow-2xl">
+      <div className="relative z-20 px-6 max-w-7xl mx-auto pt-20 flex flex-col items-center">
+        <span className="animate-fade-rise text-green-500 font-bold uppercase tracking-[0.4em] text-xs md:text-sm mb-6 drop-shadow-md">
+          Escape the City Noise
+        </span>
+        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-9xl font-display font-black tracking-[-3px] leading-[0.9] text-white mb-6 drop-shadow-2xl">
           North Bengal & <br />
-          <span className="text-[#22c55e]">Dooars Tour Packages.</span>
+          <span className="text-[#22c55e]">Dooars Escapes.</span>
         </h1>
-        <p className="animate-fade-rise text-2xl sm:text-3xl md:text-4xl font-display font-bold tracking-tight text-gray-200 mb-8 drop-shadow-lg">
-          The Premier travel agency in Siliguri for Darjeeling & Sikkim Escapes.
+        <p className="animate-fade-rise-delay text-xl sm:text-2xl md:text-3xl font-display italic tracking-tight text-gray-200 mb-12 max-w-4xl drop-shadow-lg">
+          The Premier Local Travel Collective for Darjeeling & Sikkim.
         </p>
 
-        <div className="animate-fade-rise-delay bg-black/30 backdrop-blur-xl border border-white/10 p-6 rounded-3xl max-w-3xl mx-auto mb-8 shadow-2xl">
-          <p className="text-lg text-white font-medium leading-relaxed">
-            Tourex provides <strong>all-inclusive North Bengal tour packages</strong> starting from Siliguri. Our 2026 itineraries cover Darjeeling, Kalimpong, and the Dooars forests with private transport, local guides, and 100% customized stays. 
-          </p>
+        <div className="animate-fade-rise-delay-2 w-full max-w-5xl scale-95 md:scale-100">
+          <SearchBar />
         </div>
 
-        <SearchBar />
-
-        <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 mb-16">
-          <Link href="/packages" className="btn-premium bg-[#15803d] hover:bg-[#16a34a] text-white px-10 py-4 rounded-full font-black transition-all hover:scale-105 shadow-xl">
-            Explore Packages
+        <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-8 justify-center items-center mt-16 mb-20">
+          <Link href="/packages" className="btn-premium group flex items-center gap-3">
+            <span>Explore Packages</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
-          <Link href="https://wa.me/918768683198" target="_blank" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-black transition-all hover:bg-white/20">
-            WhatsApp Us
+          <Link href="https://wa.me/918768683198" target="_blank" className="text-white font-bold hover:text-green-400 transition-colors flex items-center gap-2 border-b border-white/20 pb-1">
+            Plan My Trip via WhatsApp
           </Link>
         </div>
       </div>
 
-      {/* Cinematic Dust/Mist Particle Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
+      {/* Cinematic Ambient Overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-20 z-15">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" />
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <div className="w-px h-16 bg-gradient-to-b from-transparent via-green-500/50 to-transparent" />
       </div>
     </section>
   );

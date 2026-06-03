@@ -66,12 +66,12 @@ const Storytelling = () => {
 
       {/* Centered Text Overlay */}
       <div className="relative z-20 text-center pointer-events-none px-6">
-        <h2 className="story-text text-5xl md:text-8xl font-display font-black tracking-tighter text-black drop-shadow-[0_4px_4px_rgba(255,255,255,0.5)]">
+        <h2 className="story-text text-6xl md:text-9xl font-display font-black tracking-[-4px] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-[0.9]">
           Same person.<br />
-          <span className="text-[#15803d]">Different life.</span>
+          <span className="text-green-500 italic font-normal drop-shadow-[0_10px_30px_rgba(0,0,0,0.3)]">Different life.</span>
         </h2>
-        <p className="mt-8 text-xl text-black max-w-xl mx-auto font-medium opacity-0 story-text drop-shadow-[0_2px_4px_rgba(255,255,255,0.5)]">
-          Escape the monochrome of the 9-to-5. Reconnect with the vibrant colors of the North Bengal wild.
+        <p className="mt-12 text-xl md:text-2xl text-white max-w-2xl mx-auto font-display italic opacity-0 story-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+          Escape the monochrome of the city. Reconnect with the vibrant soul of the wild North.
         </p>
       </div>
     </section>

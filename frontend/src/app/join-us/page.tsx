@@ -41,52 +41,44 @@ export default function JoinUsPage() {
   ];
 
   return (
-    <div className="bg-white text-[#0f172a] min-h-screen font-sans">
+    <div className="bg-white text-[#020617] min-h-screen font-sans">
       <Navbar />
       
       {/* HERO */}
-      <section className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-[#f8fafc]">
+      <section className="relative h-[70vh] overflow-hidden flex items-center justify-center bg-[#020617]">
         <img
           src="https://images.unsplash.com/photo-1581390212720-639535798993?auto=format&fit=crop&w=1920&q=80"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale-[0.5]"
           alt="North Bengal Tea Garden"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-transparent to-white" />
 
         <div className="relative z-10 text-center max-w-5xl px-6 flex flex-col items-center">
-          <Image 
-            src="/images/Logo.jpeg" 
-            alt="Tourex Logo" 
-            width={100} 
-            height={100} 
-            className="rounded-3xl shadow-xl mb-8"
-          />
-          <p className="uppercase tracking-[5px] text-green-700 font-bold text-sm">
-            TOUREX COMMUNITY NETWORK
-          </p>
+          <span className="text-green-500 font-bold uppercase tracking-[0.5em] text-xs mb-6 animate-fade-rise">
+            Collective Network
+          </span>
 
-          <h1 className="text-6xl md:text-8xl font-black mt-5 leading-none text-[#0f172a]">
+          <h1 className="text-7xl md:text-9xl font-display font-black mt-5 leading-[0.9] text-[#020617] tracking-[-3px] animate-fade-rise">
             JOIN US
           </h1>
 
-          <p className="mt-8 text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl">
-            Building a collaborative travel ecosystem for
-            North Bengal’s local tourism community.
+          <p className="mt-8 text-xl md:text-3xl text-gray-600 italic font-display max-w-2xl animate-fade-rise">
+            Building a collaborative travel ecosystem for the North Bengal collective.
           </p>
 
-          <div className="mt-10 flex justify-center gap-4 flex-wrap">
+          <div className="mt-12 flex justify-center gap-8 flex-wrap animate-fade-rise">
             <Link 
               href="https://wa.me/918768683198?text=Hi Tourex! I want to join as a partner."
               target="_blank"
-              className="bg-green-700 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl"
+              className="bg-[#020617] text-white px-10 py-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-green-700 transition-all shadow-2xl"
             >
               Become A Partner
             </Link>
 
             <button 
               onClick={() => document.getElementById('about-platform')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border border-gray-200 bg-white px-8 py-4 rounded-full hover:bg-gray-50 transition-all text-[#0f172a] font-semibold"
+              className="border-b border-[#020617]/20 text-[#020617] font-black text-xs uppercase tracking-widest hover:text-green-700 transition-all pb-1"
             >
               Learn More
             </button>
@@ -95,67 +87,61 @@ export default function JoinUsPage() {
       </section>
 
       {/* ABOUT */}
-      <section id="about-platform" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="about-platform" className="max-w-7xl mx-auto px-8 md:px-12 py-40">
+        <div className="grid md:grid-cols-2 gap-24 items-center">
           <div>
-            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
-              About The Platform
-            </p>
+            <span className="text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-8 block">Our Vision</span>
 
-            <h2 className="text-5xl font-bold mt-4 leading-tight text-[#0f172a]">
-              More Than A Travel Company
+            <h2 className="text-5xl md:text-7xl font-display font-black leading-[1.1] text-[#020617] tracking-tighter">
+              More Than A <br />
+              <span className="italic font-normal text-green-800 text-4xl md:text-6xl">Travel Company</span>
             </h2>
 
-            <p className="mt-8 text-gray-600 text-lg leading-relaxed">
-              TOUREX is building a technology-supported collaboration platform
+            <p className="mt-10 text-xl text-gray-600 leading-relaxed font-medium">
+              Tourex is building a technology-supported collaboration platform
               for local travel stakeholders across North Bengal.
             </p>
 
-            <p className="mt-5 text-gray-500 text-lg leading-relaxed">
+            <p className="mt-6 text-gray-500 text-lg leading-relaxed">
               We believe local tourism businesses deserve better visibility,
-              better digital support and stronger collaboration opportunities.
-            </p>
-
-            <p className="mt-5 text-gray-500 text-lg leading-relaxed">
-              Our mission is to connect travelers directly with trusted local
-              experiences while empowering the people behind North Bengal tourism.
+              premium digital support and stronger collaboration opportunities.
             </p>
           </div>
 
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80"
-              className="rounded-[32px] shadow-2xl"
-              alt="Darjeeling Hills and Tea Garden"
-            />
+          <div className="relative group">
+            <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] bg-gray-100">
+              <img
+                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80"
+                className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                alt="Darjeeling Hills"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* WHO CAN JOIN */}
-      <section className="px-6 pb-24 bg-gray-50 py-24">
+      <section className="px-8 md:px-12 pb-40 bg-gray-50 py-40">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
-              Who Can Join
-            </p>
+          <div className="text-center mb-24">
+             <span className="text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Stakeholders</span>
 
-            <h2 className="text-5xl font-bold mt-4 text-[#0f172a]">
-              Local Stakeholders We Work With
+            <h2 className="text-5xl md:text-7xl font-display font-black text-[#020617] tracking-tighter">
+              The Local Collective
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {stakeholders.map((item) => (
               <div
                 key={item.title}
-                className="bg-white border border-gray-100 rounded-[28px] p-8 hover:-translate-y-2 transition-all shadow-lg"
+                className="bg-white rounded-[2rem] p-10 hover:-translate-y-3 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] group"
               >
-                <div className="text-5xl mb-6">{item.icon}</div>
+                <div className="text-6xl mb-8 group-hover:scale-110 transition-transform">{item.icon}</div>
 
-                <h3 className="text-2xl font-bold text-[#0f172a]">{item.title}</h3>
+                <h3 className="text-2xl font-display font-black text-[#020617] mb-4">{item.title}</h3>
 
-                <p className="mt-4 text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed font-medium">
                   {item.desc}
                 </p>
               </div>

@@ -26,16 +26,18 @@ const Trust = () => {
   ];
 
   return (
-    <section id="trust" className="py-32 bg-white border-t border-gray-100">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <section id="trust" className="py-40 bg-white border-y border-gray-50">
+      <div className="container mx-auto px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
           {features.map((f, i) => (
             <div key={i} className="text-center group">
-              <div className="mb-8 flex justify-center transform group-hover:scale-110 transition-transform duration-500">
-                {f.icon}
+              <div className="mb-10 flex justify-center transform group-hover:-translate-y-2 transition-transform duration-700">
+                <div className="p-6 rounded-3xl bg-gray-50 text-green-700 group-hover:bg-green-700 group-hover:text-white transition-all duration-500 shadow-sm">
+                  {React.cloneElement(f.icon as React.ReactElement, { size: 32, className: "transition-colors" })}
+                </div>
               </div>
-              <h3 className="text-2xl font-display font-black mb-4 tracking-tight text-[#0f172a]">{f.title}</h3>
-              <p className="text-[#4b5563] leading-relaxed">{f.desc}</p>
+              <h3 className="text-xl font-display font-black mb-6 tracking-tight text-[#020617] uppercase tracking-[0.1em]">{f.title}</h3>
+              <p className="text-gray-500 leading-relaxed font-medium text-sm px-4">{f.desc}</p>
             </div>
           ))}
         </div>

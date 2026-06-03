@@ -5,60 +5,68 @@ import { Camera, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0f172a] border-t border-[var(--glass-border)] pt-20 pb-10">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-[#020617] text-white pt-32 pb-16 border-t border-white/5">
+      <div className="container mx-auto px-8 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-20 mb-24">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <Image 
-                src="/images/Logo.jpeg" 
-                alt="Tourex Logo" 
-                width={50} 
-                height={50} 
-                className="rounded-lg object-contain brightness-90 group-hover:brightness-100 transition-all"
-              />
-              <span className="text-3xl font-black tracking-tighter text-white">
-                TOUREX<span className="text-[var(--primary)]">.</span>
-              </span>
+            <Link href="/" className="flex items-center gap-5 mb-10 group">
+              <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black">
+                <Image 
+                  src="/images/Logo.jpeg" 
+                  alt="Tourex Logo" 
+                  width={60} 
+                  height={60} 
+                  className="object-contain brightness-90 group-hover:brightness-100 transition-all duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-4xl font-display font-black tracking-tighter text-white">
+                  TOUREX
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 -mt-1 transition-colors group-hover:text-green-500">
+                  The Local Collective
+                </span>
+              </div>
             </Link>
-            <p className="text-gray-400 max-w-sm text-lg leading-relaxed">
-              Stress-Free North Bengal Escapes. We curate local experiences that help you escape the city noise and find peace in nature.
+            <p className="text-gray-500 max-w-sm text-lg leading-relaxed font-medium italic">
+              We curate sensory escapes that help you recalibrate against the backdrop of the North Bengal wild.
             </p>
           </div>
           
           <div>
-            <h4 className="text-xl font-bold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-gray-400">
-                <Phone size={18} className="text-[var(--primary)]" />
-                <span>8768683198 / 8116413984</span>
+            <h4 className="text-xs uppercase tracking-[0.3em] font-black text-white mb-10">Contact</h4>
+            <ul className="space-y-6">
+              <li className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-widest text-gray-600 font-black">Direct Line</span>
+                <span className="text-gray-400 font-bold hover:text-green-500 transition-colors cursor-pointer">8768683198 / 8116413984</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Mail size={18} className="text-[var(--primary)]" />
-                <span>tourex.officials@gmail.com</span>
+              <li className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-widest text-gray-600 font-black">Electronic Mail</span>
+                <span className="text-gray-400 font-bold hover:text-green-500 transition-colors cursor-pointer">tourex.officials@gmail.com</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Camera size={18} className="text-[var(--primary)]" />
-                <span>@tou.rex</span>
+              <li className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-widest text-gray-600 font-black">Social Handle</span>
+                <span className="text-gray-400 font-bold hover:text-green-500 transition-colors cursor-pointer">@tou.rex</span>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-xl font-bold mb-6">Explore</h4>
+            <h4 className="text-xs uppercase tracking-[0.3em] font-black text-white mb-10">Navigation</h4>
             <ul className="space-y-4">
-              <li><Link href="#experiences" className="text-gray-400 hover:text-[var(--primary)] transition-colors">Experiences</Link></li>
-              <li><Link href="#story" className="text-gray-400 hover:text-[var(--primary)] transition-colors">Our Story</Link></li>
-              <li><Link href="#trust" className="text-gray-400 hover:text-[var(--primary)] transition-colors">Why Tourex</Link></li>
+              <li><Link href="/packages" className="text-gray-400 font-bold hover:text-green-500 transition-colors uppercase tracking-widest text-[10px]">Journeys</Link></li>
+              <li><Link href="#about" className="text-gray-400 font-bold hover:text-green-500 transition-colors uppercase tracking-widest text-[10px]">Heritage</Link></li>
+              <li><Link href="/join-us" className="text-gray-400 font-bold hover:text-green-500 transition-colors uppercase tracking-widest text-[10px]">Collective</Link></li>
+              <li><Link href="/blog" className="text-gray-400 font-bold hover:text-green-500 transition-colors uppercase tracking-widest text-[10px]">Stories</Link></li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-[var(--glass-border)] pt-8 flex flex-col md:row justify-between items-center text-sm text-gray-500">
-          <p>© 2026 Tourex. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-[var(--primary)] transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-[var(--primary)] transition-colors">Terms of Service</Link>
+        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.3em] font-black text-gray-700">
+          <p>© 2026 Tourex Collective. Crafted for explorers.</p>
+          <div className="flex gap-10 mt-6 md:mt-0">
+            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>

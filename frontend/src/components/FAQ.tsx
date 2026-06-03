@@ -42,49 +42,50 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-white overflow-hidden">
+    <section id="faq" className="py-40 bg-white overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-black text-[#0f172a] mb-4">
-              Common <span className="text-[#15803d]">Questions.</span>
+      <div className="container mx-auto px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-24">
+             <span className="text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Concierge</span>
+            <h2 className="text-5xl md:text-7xl font-display font-black text-[#020617] mb-8 tracking-tighter">
+              Common <span className="italic font-normal text-green-800">Questions.</span>
             </h2>
-            <p className="text-[#4b5563]">Everything you need to know about planning your North Bengal escape with Tourex.</p>
+            <p className="text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">Everything you need to know about planning your next transformation with the Tourex Collective.</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                className={`group border rounded-3xl transition-all duration-300 ${
-                  activeIndex === index ? 'border-[#15803d] bg-green-50/30' : 'border-gray-100 bg-white hover:border-gray-200'
+                className={`group border-b border-gray-100 transition-all duration-500 ${
+                  activeIndex === index ? 'bg-gray-50/50' : 'bg-transparent'
                 }`}
               >
                 <button
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center justify-between py-10 px-6 text-left"
                 >
-                  <span className={`text-lg font-bold transition-colors ${
-                    activeIndex === index ? 'text-[#15803d]' : 'text-[#0f172a]'
+                  <span className={`text-xl md:text-2xl font-display font-bold tracking-tight transition-colors duration-500 ${
+                    activeIndex === index ? 'text-green-800' : 'text-[#020617]'
                   }`}>
                     {faq.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-4 transition-transform duration-300 ${
-                    activeIndex === index ? 'rotate-180 text-[#15803d]' : 'text-gray-400'
+                  <div className={`flex-shrink-0 ml-4 transition-transform duration-500 ${
+                    activeIndex === index ? 'rotate-180 text-green-800' : 'text-gray-300'
                   }`}>
-                    <ChevronDown size={24} />
+                    <ChevronDown size={28} strokeWidth={1.5} />
                   </div>
                 </button>
                 <div 
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     activeIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-6 text-[#4b5563] leading-relaxed">
+                  <div className="px-6 pb-12 text-gray-500 text-lg leading-relaxed font-medium max-w-3xl">
                     {faq.answer}
                   </div>
                 </div>
