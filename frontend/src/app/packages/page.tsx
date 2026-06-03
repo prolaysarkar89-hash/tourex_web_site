@@ -90,38 +90,38 @@ export default function PackagesPage() {
       {/* PACKAGES GRID */}
       <section id="featured-packages" className="px-8 md:px-16 pb-40 bg-white relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 perspective-1000">
             {packages.map((pkg) => (
               <div
                 key={pkg.name}
-                className="group cursor-pointer"
+                className="preserve-3d card-3d-hover cursor-pointer bg-white rounded-[2.5rem] p-4 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] group"
               >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-700 group-hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] mb-6">
                   <img
                     src={pkg.image}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     alt={pkg.name}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-                  <div className="absolute bottom-10 left-10 text-white">
-                    <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-green-400 mb-2">{pkg.highlights[0]}</p>
-                    <h3 className="text-4xl font-display font-black leading-none">{pkg.name}</h3>
+                  <div className="absolute bottom-6 left-6 text-white translate-z-10">
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-green-300 mb-2">{pkg.highlights[0]}</p>
+                    <h3 className="text-3xl font-display font-black leading-none">{pkg.name}</h3>
                   </div>
                 </div>
 
-                <div className="px-4">
-                   <h4 className="text-2xl font-display font-bold text-[#020617] mb-3">
+                <div className="px-4 translate-z-10">
+                   <h4 className="text-xl font-display font-bold text-[#1A1A1A] mb-3">
                     {pkg.subtitle}
                   </h4>
-                  <div className="flex flex-wrap gap-3 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {pkg.highlights.slice(1).map((item) => (
                       <span
                         key={item}
-                        className="text-[10px] uppercase tracking-widest font-black text-gray-400"
+                        className="text-[10px] uppercase tracking-widest font-bold text-gray-500 bg-gray-50 px-3 py-1 rounded-full"
                       >
-                        • {item}
+                        {item}
                       </span>
                     ))}
                   </div>
@@ -129,7 +129,7 @@ export default function PackagesPage() {
                   <div className="flex items-center justify-between pt-6 border-t border-gray-100">
                     <div>
                       <p className="text-[10px] uppercase tracking-widest font-black text-gray-400">Exclusive Access</p>
-                      <h4 className="text-xl font-display font-black mt-1 text-[#020617]">
+                      <h4 className="text-2xl font-display font-black mt-1 text-green-800">
                         {pkg.price}
                       </h4>
                     </div>
@@ -137,7 +137,7 @@ export default function PackagesPage() {
                     <Link 
                       href={`https://wa.me/918768683198?text=Hi Tourex! I'm interested in the ${pkg.name} package.`}
                       target="_blank"
-                      className="bg-[#020617] text-white px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-green-700 transition-all shadow-xl shadow-gray-200"
+                      className="rounded-full bg-green-50 text-green-700 px-6 py-3 text-xs font-black uppercase tracking-widest hover:bg-green-700 hover:text-white transition-all shadow-sm"
                     >
                       Reserve
                     </Link>
