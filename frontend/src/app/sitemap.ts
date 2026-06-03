@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.tourextravel.com'
+  const baseUrl = 'https://tourex-web-frontend.vercel.app'
   
   const landingPages = [
     'north-bengal-tour-package',
@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'bhutan-tour-package',
     'family-tour-package',
     'honeymoon-tour-package',
+    'packages',
   ]
 
   const blogPosts = [
@@ -28,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 1,
     },
     ...landingPages.map((page) => ({

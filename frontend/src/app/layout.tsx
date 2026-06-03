@@ -4,12 +4,13 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.tourextravel.com"),
+  metadataBase: new URL("https://tourex-web-frontend.vercel.app"),
 
   title: {
     default: "Tourex - Best North Bengal & Dooars Tour Packages from Siliguri",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     title: "Tourex - Premium North Bengal & Dooars Tour Packages",
     description:
       "Experience the raw beauty of the Himalayas with the best tour operator in Siliguri.",
-    url: "https://www.tourextravel.com",
+    url: "https://tourex-web-frontend.vercel.app",
     siteName: "Tourex",
     images: [
       {
@@ -73,6 +74,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_CODE_HERE",
+  },
 };
 
 export default function RootLayout({
@@ -83,58 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TravelAgency",
-              "name": "Tourex",
-              "url": "https://www.tourextravel.com",
-              "logo": "https://www.tourextravel.com/images/Logo.jpeg",
-              "image": "https://www.tourextravel.com/og-image.jpg",
-              "description": "Premium North Bengal and Dooars travel agency in Siliguri offering Darjeeling, Sikkim, Silk Route and jungle safari packages.",
-              "telephone": "+91-8768683198",
-              "priceRange": "₹₹",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Sevoke Road",
-                "addressLocality": "Siliguri",
-                "addressRegion": "West Bengal",
-                "postalCode": "734001",
-                "addressCountry": "India"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "26.7271",
-                "longitude": "88.3953"
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
-                ],
-                "opens": "09:00",
-                "closes": "21:00"
-              },
-              "sameAs": [
-                "https://instagram.com/tourex",
-                "https://facebook.com/tourex"
-              ],
-              "areaServed": [
-                { "@type": "State", "name": "West Bengal" },
-                { "@type": "State", "name": "Sikkim" },
-                { "@type": "Country", "name": "Bhutan" }
-              ]
-            })
-          }}
-        />
+        <JsonLd />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <SmoothScroll>
