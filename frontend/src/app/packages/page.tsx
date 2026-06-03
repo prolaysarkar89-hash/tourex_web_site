@@ -74,14 +74,14 @@ export default function PackagesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-transparent to-white" />
 
         <div className="relative z-10 text-center px-6 max-w-5xl flex flex-col items-center">
-          <span className="text-green-500 font-bold uppercase tracking-[0.5em] text-xs mb-6 animate-fade-rise">
+          <span className="text-green-400 font-bold uppercase tracking-[0.4em] text-xs mb-6 animate-fade-rise">
             Curated Journeys
           </span>
-          <h1 className="text-7xl md:text-9xl font-display font-black tracking-[-3px] leading-[0.9] text-[#020617] animate-fade-rise">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tight leading-[1.1] text-white animate-fade-rise">
             PACKAGES
           </h1>
 
-          <p className="mt-8 text-xl md:text-3xl text-gray-600 italic font-display max-w-2xl animate-fade-rise">
+          <p className="mt-8 text-xl md:text-2xl text-gray-200 italic font-display max-w-2xl animate-fade-rise drop-shadow-md">
             Sensory escapes designed for those who seek the silence of the hills.
           </p>
         </div>
