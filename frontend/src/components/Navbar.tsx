@@ -66,7 +66,7 @@ const Navbar = () => {
               TOUREX
             </span>
             <span className={`text-[7px] md:text-[8px] uppercase tracking-[0.25em] font-black mt-0.5 transition-colors duration-500 ${subTextColor}`}>
-              The Local Collective
+              Stress-Free North Bengal Escapes
             </span>
           </div>
         </Link>

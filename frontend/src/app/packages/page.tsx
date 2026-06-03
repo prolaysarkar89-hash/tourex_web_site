@@ -163,7 +163,7 @@ export default function PackagesPage() {
             <div>
               <h3 className="text-3xl font-display font-black text-[#020617] tracking-tighter">TOUREX</h3>
               <p className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-400 mt-1">
-                The Heritage Collective
+                Stress-Free North Bengal Escapes
               </p>
             </div>
           </div>

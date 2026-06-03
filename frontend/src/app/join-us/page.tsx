@@ -127,7 +127,7 @@ export default function JoinUsPage() {
              <span className="text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Stakeholders</span>
 
             <h2 className="text-5xl md:text-7xl font-display font-black text-[#020617] tracking-tighter">
-              The Local Collective
+              Stress-Free North Bengal Escapes
             </h2>
           </div>
 

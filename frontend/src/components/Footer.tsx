@@ -24,7 +24,7 @@ const Footer = () => {
                   TOUREX
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 -mt-1 transition-colors group-hover:text-green-500">
-                  The Local Collective
+                  Stress-Free North Bengal Escapes
                 </span>
               </div>
             </Link>

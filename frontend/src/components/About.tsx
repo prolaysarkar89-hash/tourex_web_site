@@ -51,7 +51,7 @@ const About = () => {
           </div>
 
           <div ref={textRef} className="lg:pl-10">
-            <span className="about-reveal inline-block text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-8">The Heritage Collective</span>
+            <span className="about-reveal inline-block text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-8">Stress-Free North Bengal Escapes</span>
             <h2 className="about-reveal text-5xl md:text-7xl font-display font-black mb-10 leading-[1.1] tracking-tighter text-accent">
               Not just a trip.<br />
               <span className="italic font-normal text-primary">A transformation.</span>
