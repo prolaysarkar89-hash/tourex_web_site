@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #0f172a;
-  --primary: #15803d;
-  --primary-dark: #14532d;
-  --secondary-text: #4b5563;
-  --glass: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.1);
+  --background: #FAFAFA;
+  --foreground: #1A1A1A;
+  --primary: #166534;
+  --primary-dark: #14532D;
+  --secondary-text: #4B5563;
 }
 
 @theme {
@@ -19,22 +17,37 @@
   --font-inter: var(--font-inter);
 }
 
+/* Cinematic Ken Burns */
 @keyframes ken-burns {
-  0% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0.4;
-  }
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.05) translate(-1%, -1%); }
+  100% { transform: scale(1.1) translate(1%, 1%); }
 }
 
 .animate-ken-burns {
-  animation: ken-burns 20s ease-in-out infinite alternate;
+  animation: ken-burns 30s ease-in-out infinite alternate;
+}
+
+/* 3D Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.card-3d-hover {
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+}
+
+.card-3d-hover:hover {
+  transform: rotateY(8deg) rotateX(5deg) translateZ(20px);
+  box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.translate-z-10 {
+  transform: translateZ(30px);
 }
 
 @layer base {
@@ -44,9 +57,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--font-inter);
+    overflow-x: hidden;
   }
   
-  h1, h2, h3, .font-display {
+  h1, h2, h3, h4, .font-display {
     font-family: var(--font-playfair);
   }
   
@@ -56,55 +70,21 @@
 }
 
 @layer components {
-  .glass-card {
-    background-color: var(--glass);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px);
-    border-radius: 1rem;
-  }
-  
-  .btn-premium {
-    padding: 1.25rem 3.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: var(--primary);
-    color: white;
-    display: inline-block;
-  }
-
-  .btn-premium:hover {
-    transform: translateY(-0.25rem) scale(1.05);
-    background-color: var(--primary-dark);
-  }
-
-  .btn-outline-premium {
-    padding: 1.25rem 3.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    display: inline-block;
-  }
-
-  .btn-outline-premium:hover {
-    transform: translateY(-0.25rem) scale(1.05);
-    background-color: var(--primary);
-    color: white;
+  .btn-primary {
+    @apply bg-green-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:bg-green-800 hover:shadow-xl hover:-translate-y-1 active:scale-95;
   }
 
   .animate-fade-rise {
-    animation: fade-rise 0.8s ease-out forwards;
+    animation: fade-rise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-fade-rise-delay {
-    animation: fade-rise 0.8s ease-out 0.2s forwards;
+    animation: fade-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
     opacity: 0;
   }
 
   .animate-fade-rise-delay-2 {
-    animation: fade-rise 0.8s ease-out 0.4s forwards;
+    animation: fade-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
     opacity: 0;
   }
 }
@@ -112,7 +92,7 @@
 @keyframes fade-rise {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -122,15 +102,15 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ddd;
+  background: #c1c1c1;
   border-radius: 10px;
 }
 

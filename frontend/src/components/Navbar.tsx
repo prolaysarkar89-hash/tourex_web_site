@@ -31,19 +31,19 @@ const Navbar = () => {
   const isDarkHeroPage = pathname === '/' || pathname === '/packages' || pathname === '/join-us';
 
   const navBg = scrolled 
-    ? "bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm"
+    ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
     : "bg-transparent";
 
   // If scrolled, text is always dark. If not scrolled, depends on if the page has a dark hero.
   const textColor = scrolled 
     ? "text-slate-900" 
-    : (isDarkHeroPage ? "text-white" : "text-slate-900");
+    : (isDarkHeroPage ? "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" : "text-slate-900");
 
   const subTextColor = scrolled 
     ? "text-slate-500" 
-    : (isDarkHeroPage ? "text-slate-300" : "text-slate-500");
+    : (isDarkHeroPage ? "text-slate-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" : "text-slate-500");
 
-  const navLinkClass = `text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 hover:text-green-600 whitespace-nowrap ${textColor}`;
+  const navLinkClass = `text-sm font-bold uppercase tracking-[0.05em] transition-all duration-300 hover:text-green-500 whitespace-nowrap ${textColor}`;
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${navBg} ${scrolled ? 'py-3' : 'py-5'}`}>

@@ -35,7 +35,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-[#020617]">
+    <section id="home" className="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-white">
       {/* Cinematic Ken Burns Background */}
       <div 
         ref={mountainRef}
@@ -46,51 +46,45 @@ const Hero = () => {
           alt={visuals[0].title}
           fill
           priority
-          className="object-cover opacity-50"
+          className="object-cover"
           sizes="100vw"
           quality={100}
         />
       </div>
       
-      {/* Advanced Gradient Overlays for Cinematic Depth */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#020617]/90 via-transparent to-[#020617]/95" />
-      <div className="absolute inset-0 z-10 bg-black/40" />
+      {/* Soft Light Overlay for Local-Friendly Vibe */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/50 via-black/20 to-black/60" />
 
-      <div className="relative z-20 px-6 max-w-7xl mx-auto pt-20 flex flex-col items-center">
-        <span className="animate-fade-rise text-green-500 font-bold uppercase tracking-[0.4em] text-xs md:text-sm mb-6 drop-shadow-md">
-          Escape the City Noise
+      <div className="relative z-20 px-6 max-w-7xl mx-auto pt-24 flex flex-col items-center perspective-1000">
+        <span className="animate-fade-rise text-green-400 font-bold uppercase tracking-[0.3em] text-sm md:text-base mb-4 drop-shadow-md">
+          Welcome to the Himalayas
         </span>
-        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-9xl font-display font-black tracking-[-3px] leading-[0.9] text-white mb-6 drop-shadow-2xl">
-          North Bengal & <br />
-          <span className="text-[#22c55e]">Dooars Escapes.</span>
+        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl font-display font-black leading-[1.1] text-white mb-6 drop-shadow-xl">
+          Discover the Soul of<br />
+          <span className="text-green-400">North Bengal.</span>
         </h1>
-        <p className="animate-fade-rise-delay text-xl sm:text-2xl md:text-3xl font-display italic tracking-tight text-gray-200 mb-12 max-w-4xl drop-shadow-lg">
-          The Premier Local Travel Collective for Darjeeling & Sikkim.
+        <p className="animate-fade-rise-delay text-lg sm:text-xl md:text-2xl font-medium text-gray-100 mb-12 max-w-3xl drop-shadow-lg">
+          Authentic local experiences, comfortable stays, and cinematic mountain escapes designed just for you.
         </p>
 
-        <div className="animate-fade-rise-delay-2 w-full max-w-5xl scale-95 md:scale-100">
+        {/* 3D Floating Search Bar */}
+        <div className="animate-fade-rise-delay-2 w-full max-w-5xl preserve-3d translate-z-10 hover:translate-z-20 transition-transform duration-500">
           <SearchBar />
         </div>
 
-        <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-8 justify-center items-center mt-16 mb-20">
-          <Link href="/packages" className="btn-premium group flex items-center gap-3">
-            <span>Explore Packages</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+        <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 mb-16">
+          <Link href="/packages" className="btn-primary">
+            Explore Packages
           </Link>
-          <Link href="https://wa.me/918768683198" target="_blank" className="text-white font-bold hover:text-green-400 transition-colors flex items-center gap-2 border-b border-white/20 pb-1">
-            Plan My Trip via WhatsApp
+          <Link href="https://wa.me/918768683198" target="_blank" className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-white/30 hover:-translate-y-1">
+            Plan via WhatsApp
           </Link>
         </div>
       </div>
 
-      {/* Cinematic Ambient Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 z-15">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" />
-      </div>
-
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-        <div className="w-px h-16 bg-gradient-to-b from-transparent via-green-500/50 to-transparent" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <div className="w-1 h-12 bg-gradient-to-b from-white to-transparent rounded-full opacity-60" />
       </div>
     </section>
   );

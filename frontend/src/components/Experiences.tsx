@@ -98,41 +98,38 @@ const Experiences = () => {
       <div className="container mx-auto px-8 max-w-7xl">
         <div className="mb-24 text-center">
            <span className="text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Exclusive Journeys</span>
-          <h2 className="text-5xl md:text-7xl font-display font-black mb-8 tracking-tighter text-[#020617]">Curated <span className="italic font-normal text-green-800">Experiences</span></h2>
+          <h2 className="text-5xl md:text-7xl font-display font-black mb-8 tracking-tighter text-[#1A1A1A]">Curated <span className="italic font-normal text-green-700">Experiences</span></h2>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto font-medium">Not just packages — handpicked memories designed to reset your soul.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 perspective-1000">
           {experiences.map((exp) => (
             <div 
               key={exp.id} 
-              className="experience-card group cursor-pointer"
+              className="experience-card preserve-3d card-3d-hover cursor-pointer bg-white rounded-[2.5rem] p-4 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-700 group-hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] mb-6">
                 <Image 
                   src={exp.image} 
                   alt={`${exp.name} - ${exp.region} Tour Package by Tourex`} 
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
                 
-                <span className="absolute top-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest">
+                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-green-800 text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-sm">
                   {exp.type}
                 </span>
-                
-                <div className="absolute bottom-10 left-10 text-white">
-                  <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-green-400 mb-2">{exp.tagline}</p>
-                  <h3 className="text-4xl font-display font-black leading-none">{exp.name}</h3>
-                </div>
               </div>
               
-              <div className="px-4">
-                <p className="text-gray-500 text-sm mb-8 leading-relaxed font-medium line-clamp-2 italic">
-                  &quot;{exp.description}&quot;
+              <div className="px-4 translate-z-10">
+                <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-green-600 mb-2">{exp.tagline}</p>
+                <h3 className="text-3xl font-display font-black leading-none mb-4 text-[#1A1A1A]">{exp.name}</h3>
+                
+                <p className="text-gray-500 text-sm mb-6 leading-relaxed font-medium line-clamp-2">
+                  {exp.description}
                 </p>
                 
-                <div className="flex justify-between items-center mb-8 border-y border-gray-50 py-4">
+                <div className="flex justify-between items-center mb-6 py-4 border-y border-gray-50">
                   <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-black text-gray-400">
                     <Clock size={14} className="text-green-600" />
                     <span>{exp.duration}</span>
@@ -143,15 +140,15 @@ const Experiences = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center pt-2">
+                <div className="flex justify-between items-center pb-2">
                   <div>
                     <span className="text-[10px] text-gray-400 block font-black uppercase tracking-widest mb-1">Starting from</span>
-                    <span className="text-2xl font-display font-black text-[#020617]">₹{exp.price}</span>
+                    <span className="text-2xl font-display font-black text-green-800">₹{exp.price}</span>
                   </div>
                   <Link 
                     href={`https://wa.me/918768683198?text=Hi Tourex! I'm interested in the ${exp.name} package.`}
                     target="_blank"
-                    className="rounded-2xl bg-[#020617] text-white px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-green-700 transition-all shadow-xl shadow-gray-200"
+                    className="rounded-full bg-green-50 text-green-700 px-6 py-3 text-xs font-black uppercase tracking-widest hover:bg-green-700 hover:text-white transition-all"
                   >
                     Reserve
                   </Link>
