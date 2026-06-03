@@ -18,6 +18,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollTo = (id: string) => {
+    setIsOpen(false);
+    if (pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   // Determine if the current page has a dark hero that needs light text initially
   const isDarkHeroPage = pathname === '/' || pathname === '/packages' || pathname === '/join-us';
 
@@ -120,10 +129,10 @@ const Navbar = () => {
             <Link href="/packages" className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center" onClick={() => setIsOpen(false)}>
               Packages <span className="text-green-600 text-sm">02</span>
             </Link>
-            <button onClick={() => { setIsOpen(false); scrollTo('about'); }} className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center">
+            <button onClick={() => { setIsOpen(false); scrollTo('about'); }} className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center text-left">
               About Us <span className="text-green-600 text-sm">03</span>
             </button>
-            <button onClick={() => { setIsOpen(false); scrollTo('trust'); }} className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center">
+            <button onClick={() => { setIsOpen(false); scrollTo('trust'); }} className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center text-left">
               Why Us <span className="text-green-600 text-sm">04</span>
             </button>
             <Link href="/join-us" className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center" onClick={() => setIsOpen(false)}>
