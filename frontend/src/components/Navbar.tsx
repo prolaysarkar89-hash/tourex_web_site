@@ -9,7 +9,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isDarkPage = pathname === '/packages' || pathname === '/join-us';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,14 +28,12 @@ const Navbar = () => {
   };
 
   const navBg = scrolled 
-    ? (isDarkPage ? "bg-black/90 backdrop-blur-sm border-b border-white/10" : "bg-white/95 backdrop-blur-sm shadow-none")
+    ? "bg-white/95 backdrop-blur-sm shadow-none"
     : "bg-transparent";
 
-  const textColor = isDarkPage 
-    ? (scrolled ? "text-white" : "text-white")
-    : (scrolled ? "text-[#0f172a]" : "text-[#0f172a]");
+  const textColor = scrolled ? "text-[#0f172a]" : "text-[#0f172a]";
 
-  const subTextColor = isDarkPage ? "text-gray-400" : "text-gray-500";
+  const subTextColor = "text-gray-500";
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 ${navBg}`}>
@@ -61,13 +58,13 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 items-center">
-          <Link href="/" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/' ? "text-green-700" : textColor}`}>
             Home
           </Link>
-          <Link href="/packages" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/packages' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/packages" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/packages' ? "text-green-700" : textColor}`}>
             Packages
           </Link>
-          <Link href="/blog" className={`text-sm font-semibold transition-colors duration-300 ${pathname?.startsWith('/blog') ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/blog" className={`text-sm font-semibold transition-colors duration-300 ${pathname?.startsWith('/blog') ? "text-green-700" : textColor}`}>
             Blog
           </Link>
           <button onClick={() => scrollTo('about')} className={`text-sm font-semibold hover:text-[#D4AF37] transition-colors duration-300 ${textColor}`}>
@@ -76,16 +73,14 @@ const Navbar = () => {
           <button onClick={() => scrollTo('trust')} className={`text-sm font-semibold hover:text-[#D4AF37] transition-colors duration-300 ${textColor}`}>
             Why Us
           </button>
-          <Link href="/join-us" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/join-us' ? (isDarkPage ? "text-[#D4AF37]" : "text-green-700") : textColor}`}>
+          <Link href="/join-us" className={`text-sm font-semibold transition-colors duration-300 ${pathname === '/join-us' ? "text-green-700" : textColor}`}>
             Join Us
           </Link>
           
           <Link 
             href="https://wa.me/918768683198" 
             target="_blank" 
-            className={`rounded-full px-6 py-2 text-sm font-bold hover:scale-105 transition-all ${
-              isDarkPage ? "bg-[#D4AF37] text-black" : "bg-green-700 text-white"
-            }`}
+            className="rounded-full px-6 py-2 text-sm font-bold hover:scale-105 transition-all bg-green-700 text-white"
           >
             Plan My Trip
           </Link>
@@ -100,7 +95,7 @@ const Navbar = () => {
       {/* Mobile Menu Drawer */}
       <div className={`fixed inset-0 z-40 transition-transform duration-500 ease-in-out transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
-      } md:hidden ${isDarkPage ? "bg-[#0B1210]" : "bg-white"}`}>
+      } md:hidden bg-white`}>
         <div className="flex flex-col h-full justify-center items-center gap-8 p-10">
           <Link href="/" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/packages" className={`text-2xl font-black ${textColor}`} onClick={() => setIsOpen(false)}>Packages</Link>
@@ -111,9 +106,7 @@ const Navbar = () => {
           <Link 
             href="https://wa.me/918768683198" 
             target="_blank" 
-            className={`w-full text-center rounded-full px-8 py-4 text-lg font-bold ${
-              isDarkPage ? "bg-[#D4AF37] text-black" : "bg-green-700 text-white"
-            }`}
+            className="w-full text-center rounded-full px-8 py-4 text-lg font-bold bg-green-700 text-white"
             onClick={() => setIsOpen(false)}
           >
             WhatsApp Us

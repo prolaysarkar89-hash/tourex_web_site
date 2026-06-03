@@ -57,16 +57,18 @@ export default function PackagesPage() {
   ];
 
   return (
-    <div className="bg-[#0B1210] text-white min-h-screen font-sans">
+    <div className="bg-white text-[#0f172a] min-h-screen font-sans">
       <Navbar />
       
       {/* HERO SECTION */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-          alt="North Bengal Mountains"
-        />
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#f8fafc]">
+        <div className="absolute inset-0 opacity-10">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop"
+            className="w-full h-full object-cover"
+            alt="North Bengal Mountains"
+          />
+        </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl flex flex-col items-center">
           <Image 
@@ -74,25 +76,25 @@ export default function PackagesPage() {
             alt="Tourex Logo" 
             width={120} 
             height={120} 
-            className="rounded-3xl shadow-2xl mb-8 animate-fade-in"
+            className="rounded-3xl shadow-xl mb-8 animate-fade-in"
           />
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none text-[#0f172a]">
             TOUREX
           </h1>
 
-          <p className="mt-4 text-xl md:text-2xl text-gray-200 italic">
+          <p className="mt-4 text-xl md:text-2xl text-gray-600 italic">
             Stress-Free North Bengal Escapes
           </p>
 
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
             <button 
               onClick={() => document.getElementById('featured-packages')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl"
+              className="bg-green-700 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl"
             >
               Explore Packages
             </button>
 
-            <Link href="https://wa.me/918768683198" target="_blank" className="border border-white/30 backdrop-blur-md px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+            <Link href="https://wa.me/918768683198" target="_blank" className="border border-gray-200 bg-white/50 backdrop-blur-md px-8 py-4 rounded-full hover:bg-white transition-all text-[#0f172a] font-semibold">
               Contact Us
             </Link>
           </div>
@@ -103,29 +105,29 @@ export default function PackagesPage() {
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm mb-3">
+            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm mb-3">
               About Tourex
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-[#0f172a]">
               Cinematic Travel Experiences Across North Bengal
             </h2>
 
-            <p className="mt-6 text-gray-300 text-lg leading-relaxed">
+            <p className="mt-6 text-gray-600 text-lg leading-relaxed">
               TOUREX is a North Bengal based travel brand focused on
               meaningful offbeat experiences, cinematic storytelling and
               stress-free mountain escapes.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-5">
-              <div className="bg-white/5 rounded-3xl p-5 border border-white/10">
-                <h3 className="text-3xl font-bold text-[#D4AF37]">15+</h3>
-                <p className="text-gray-300 mt-2">Offbeat Destinations</p>
+              <div className="bg-gray-50 rounded-3xl p-5 border border-gray-100">
+                <h3 className="text-3xl font-bold text-green-700">15+</h3>
+                <p className="text-gray-600 mt-2">Offbeat Destinations</p>
               </div>
 
-              <div className="bg-white/5 rounded-3xl p-5 border border-white/10">
-                <h3 className="text-3xl font-bold text-[#D4AF37]">24/7</h3>
-                <p className="text-gray-300 mt-2">Travel Support</p>
+              <div className="bg-gray-50 rounded-3xl p-5 border border-gray-100">
+                <h3 className="text-3xl font-bold text-green-700">24/7</h3>
+                <p className="text-gray-600 mt-2">Travel Support</p>
               </div>
             </div>
           </div>
@@ -141,14 +143,14 @@ export default function PackagesPage() {
       </section>
 
       {/* PACKAGES */}
-      <section id="featured-packages" className="px-6 pb-24">
+      <section id="featured-packages" className="px-6 pb-24 bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
               Featured Packages
             </p>
 
-            <h2 className="text-5xl font-bold mt-4">
+            <h2 className="text-5xl font-bold mt-4 text-[#0f172a]">
               Explore North Bengal With TOUREX
             </h2>
           </div>
@@ -157,7 +159,7 @@ export default function PackagesPage() {
             {packages.map((pkg) => (
               <div
                 key={pkg.name}
-                className="bg-white/5 border border-white/10 rounded-[28px] overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-xl"
+                className="bg-white border border-gray-100 rounded-[28px] overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg"
               >
                 <div className="relative h-72 overflow-hidden">
                   <img
@@ -166,11 +168,11 @@ export default function PackagesPage() {
                     alt={pkg.name}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                  <div className="absolute bottom-5 left-5">
+                  <div className="absolute bottom-5 left-5 text-white">
                     <h3 className="text-3xl font-bold">{pkg.name}</h3>
-                    <p className="text-gray-200 mt-1">{pkg.subtitle}</p>
+                    <p className="text-gray-100 mt-1">{pkg.subtitle}</p>
                   </div>
                 </div>
 
@@ -179,7 +181,7 @@ export default function PackagesPage() {
                     {pkg.highlights.map((item) => (
                       <span
                         key={item}
-                        className="bg-[#D4AF37]/10 text-[#D4AF37] text-sm px-3 py-1 rounded-full border border-[#D4AF37]/20"
+                        className="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full border border-green-100 font-medium"
                       >
                         {item}
                       </span>
@@ -188,8 +190,8 @@ export default function PackagesPage() {
 
                   <div className="flex items-center justify-between mt-6">
                     <div>
-                      <p className="text-gray-400 text-sm">Package</p>
-                      <h4 className="text-xl font-semibold mt-1">
+                      <p className="text-gray-500 text-sm font-medium">Package</p>
+                      <h4 className="text-xl font-bold mt-1 text-[#0f172a]">
                         {pkg.price}
                       </h4>
                     </div>
@@ -197,7 +199,7 @@ export default function PackagesPage() {
                     <Link 
                       href={`https://wa.me/918768683198?text=Hi Tourex! I'm interested in the ${pkg.name} package.`}
                       target="_blank"
-                      className="bg-[#D4AF37] text-black px-5 py-3 rounded-full font-semibold hover:scale-105 transition-all"
+                      className="bg-green-700 text-white px-5 py-3 rounded-full font-semibold hover:scale-105 transition-all shadow-md"
                     >
                       View Details
                     </Link>
@@ -210,13 +212,13 @@ export default function PackagesPage() {
       </section>
 
       {/* WHY TOUREX */}
-      <section className="bg-[#101916] py-24 px-6 border-y border-white/10">
+      <section className="bg-white py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+          <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
             Why Choose Tourex
           </p>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="text-5xl font-bold mt-4 text-[#0f172a]">
             More Than Just A Travel Company
           </h2>
 
@@ -229,13 +231,13 @@ export default function PackagesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="bg-white/5 rounded-3xl p-8 border border-white/10"
+                className="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 mx-auto mb-5 flex items-center justify-center text-[#D4AF37] text-2xl">
+                <div className="w-14 h-14 rounded-2xl bg-green-50 mx-auto mb-5 flex items-center justify-center text-green-700 text-2xl">
                   ✦
                 </div>
 
-                <p className="text-lg text-gray-200">{item}</p>
+                <p className="text-lg text-gray-700 font-medium">{item}</p>
               </div>
             ))}
           </div>
@@ -243,8 +245,8 @@ export default function PackagesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 px-6 text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="py-28 px-6 text-center relative overflow-hidden bg-green-700 text-white">
+        <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
             className="w-full h-full object-cover"
@@ -253,27 +255,27 @@ export default function PackagesPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+          <p className="uppercase tracking-[4px] text-green-200 text-sm font-bold">
             Let’s Travel Together
           </p>
 
-          <h2 className="text-5xl md:text-6xl font-black leading-tight mt-5">
+          <h2 className="text-5xl md:text-6xl font-black leading-tight mt-5 text-white">
             Escape The Routine.
             <br />
             Embrace Nature.
           </h2>
 
-          <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
+          <p className="text-green-50 text-lg mt-6 max-w-2xl mx-auto">
             Explore the hidden beauty of North Bengal with cinematic mountain
             experiences curated by TOUREX.
           </p>
 
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
-            <Link href="/packages" className="bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl">
+            <Link href="/packages" className="bg-white text-green-700 px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl">
               Book Your Escape
             </Link>
 
-            <Link href="https://wa.me/918768683198" target="_blank" className="border border-white/20 px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+            <Link href="https://wa.me/918768683198" target="_blank" className="border border-white/30 px-8 py-4 rounded-full hover:bg-white/10 transition-all font-bold">
               WhatsApp Us
             </Link>
           </div>
@@ -281,7 +283,7 @@ export default function PackagesPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10 px-6 bg-black/30">
+      <footer className="border-t border-gray-100 py-10 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-4">
             <Image 
@@ -292,14 +294,14 @@ export default function PackagesPage() {
               className="rounded-xl object-contain"
             />
             <div>
-              <h3 className="text-2xl font-black">TOUREX</h3>
-              <p className="text-gray-400 mt-1">
+              <h3 className="text-2xl font-black text-[#0f172a]">TOUREX</h3>
+              <p className="text-gray-500 mt-1">
                 Stress-Free North Bengal Escapes
               </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-gray-300 text-sm">
+          <div className="flex flex-wrap gap-6 text-gray-600 text-sm font-medium">
             <span>📞 8116413984</span>
             <span>📞 8768683198</span>
             <span>📸 @tou.rex</span>

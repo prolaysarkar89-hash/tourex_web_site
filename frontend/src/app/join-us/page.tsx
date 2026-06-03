@@ -3,6 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 
+import Image from 'next/image';
+
 export default function JoinUsPage() {
   const stakeholders = [
     {
@@ -39,29 +41,36 @@ export default function JoinUsPage() {
   ];
 
   return (
-    <div className="bg-[#0A0F0D] text-white min-h-screen font-sans">
+    <div className="bg-white text-[#0f172a] min-h-screen font-sans">
       <Navbar />
       
       {/* HERO */}
-      <section className="relative h-[90vh] overflow-hidden flex items-center justify-center">
+      <section className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-[#f8fafc]">
         <img
           src="https://images.unsplash.com/photo-1581390212720-639535798993?auto=format&fit=crop&w=1920&q=80"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
           alt="North Bengal Tea Garden"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-white/90" />
 
-        <div className="relative z-10 text-center max-w-5xl px-6">
-          <p className="uppercase tracking-[5px] text-[#D4AF37] text-sm">
+        <div className="relative z-10 text-center max-w-5xl px-6 flex flex-col items-center">
+          <Image 
+            src="/images/Logo.jpeg" 
+            alt="Tourex Logo" 
+            width={100} 
+            height={100} 
+            className="rounded-3xl shadow-xl mb-8"
+          />
+          <p className="uppercase tracking-[5px] text-green-700 font-bold text-sm">
             TOUREX COMMUNITY NETWORK
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-black mt-5 leading-none">
+          <h1 className="text-6xl md:text-8xl font-black mt-5 leading-none text-[#0f172a]">
             JOIN US
           </h1>
 
-          <p className="mt-8 text-xl md:text-2xl text-gray-200 leading-relaxed">
+          <p className="mt-8 text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl">
             Building a collaborative travel ecosystem for
             North Bengal’s local tourism community.
           </p>
@@ -70,14 +79,14 @@ export default function JoinUsPage() {
             <Link 
               href="https://wa.me/918768683198?text=Hi Tourex! I want to join as a partner."
               target="_blank"
-              className="bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all"
+              className="bg-green-700 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-xl"
             >
               Become A Partner
             </Link>
 
             <button 
               onClick={() => document.getElementById('about-platform')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border border-white/20 px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+              className="border border-gray-200 bg-white px-8 py-4 rounded-full hover:bg-gray-50 transition-all text-[#0f172a] font-semibold"
             >
               Learn More
             </button>
@@ -89,25 +98,25 @@ export default function JoinUsPage() {
       <section id="about-platform" className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
               About The Platform
             </p>
 
-            <h2 className="text-5xl font-bold mt-4 leading-tight">
+            <h2 className="text-5xl font-bold mt-4 leading-tight text-[#0f172a]">
               More Than A Travel Company
             </h2>
 
-            <p className="mt-8 text-gray-300 text-lg leading-relaxed">
+            <p className="mt-8 text-gray-600 text-lg leading-relaxed">
               TOUREX is building a technology-supported collaboration platform
               for local travel stakeholders across North Bengal.
             </p>
 
-            <p className="mt-5 text-gray-400 text-lg leading-relaxed">
+            <p className="mt-5 text-gray-500 text-lg leading-relaxed">
               We believe local tourism businesses deserve better visibility,
               better digital support and stronger collaboration opportunities.
             </p>
 
-            <p className="mt-5 text-gray-400 text-lg leading-relaxed">
+            <p className="mt-5 text-gray-500 text-lg leading-relaxed">
               Our mission is to connect travelers directly with trusted local
               experiences while empowering the people behind North Bengal tourism.
             </p>
@@ -124,14 +133,14 @@ export default function JoinUsPage() {
       </section>
 
       {/* WHO CAN JOIN */}
-      <section className="px-6 pb-24">
+      <section className="px-6 pb-24 bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
               Who Can Join
             </p>
 
-            <h2 className="text-5xl font-bold mt-4">
+            <h2 className="text-5xl font-bold mt-4 text-[#0f172a]">
               Local Stakeholders We Work With
             </h2>
           </div>
@@ -140,13 +149,13 @@ export default function JoinUsPage() {
             {stakeholders.map((item) => (
               <div
                 key={item.title}
-                className="bg-white/5 border border-white/10 rounded-[28px] p-8 hover:-translate-y-2 transition-all"
+                className="bg-white border border-gray-100 rounded-[28px] p-8 hover:-translate-y-2 transition-all shadow-lg"
               >
                 <div className="text-5xl mb-6">{item.icon}</div>
 
-                <h3 className="text-2xl font-bold">{item.title}</h3>
+                <h3 className="text-2xl font-bold text-[#0f172a]">{item.title}</h3>
 
-                <p className="mt-4 text-gray-300 leading-relaxed">
+                <p className="mt-4 text-gray-600 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -156,14 +165,14 @@ export default function JoinUsPage() {
       </section>
 
       {/* BENEFITS */}
-      <section className="bg-[#101916] py-24 px-6 border-y border-white/10">
+      <section className="bg-white py-24 px-6 border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
               Why Join TOUREX
             </p>
 
-            <h2 className="text-5xl font-bold mt-4">
+            <h2 className="text-5xl font-bold mt-4 text-[#0f172a]">
               What We Provide
             </h2>
           </div>
@@ -172,13 +181,13 @@ export default function JoinUsPage() {
             {benefits.map((item) => (
               <div
                 key={item}
-                className="bg-white/5 border border-white/10 rounded-3xl p-8"
+                className="bg-gray-50 border border-gray-100 rounded-3xl p-8 shadow-sm"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] text-2xl mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-700 text-2xl mb-6">
                   ✦
                 </div>
 
-                <p className="text-lg text-gray-200">{item}</p>
+                <p className="text-lg text-gray-700 font-medium">{item}</p>
               </div>
             ))}
           </div>
@@ -197,15 +206,15 @@ export default function JoinUsPage() {
           </div>
 
           <div>
-            <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+            <p className="uppercase tracking-[4px] text-green-700 font-bold text-sm">
               Training Program
             </p>
 
-            <h2 className="text-5xl font-bold mt-4 leading-tight">
+            <h2 className="text-5xl font-bold mt-4 leading-tight text-[#0f172a]">
               Become A Certified Local Travel Guide
             </h2>
 
-            <p className="mt-8 text-gray-300 text-lg leading-relaxed">
+            <p className="mt-8 text-gray-600 text-lg leading-relaxed">
               Anyone passionate about tourism and local culture can join our
               training program to become a professional local travel guide.
             </p>
@@ -221,13 +230,13 @@ export default function JoinUsPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-5"
+                  className="flex items-center gap-4 bg-gray-50 border border-gray-100 rounded-2xl p-5"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]">
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700">
                     ✓
                   </div>
 
-                  <p className="text-lg text-gray-200">{item}</p>
+                  <p className="text-lg text-gray-700 font-medium">{item}</p>
                 </div>
               ))}
             </div>
@@ -236,17 +245,15 @@ export default function JoinUsPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-28 px-6 overflow-hidden">
+      <section className="relative py-28 px-6 overflow-hidden bg-green-700 text-white">
         <img
           src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1400&q=80"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
           alt="North Bengal River"
         />
 
-        <div className="absolute inset-0 bg-black/70" />
-
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm">
+          <p className="uppercase tracking-[4px] text-green-200 font-bold text-sm">
             Build Together
           </p>
 
@@ -254,7 +261,7 @@ export default function JoinUsPage() {
             Let’s Grow North Bengal Tourism Together
           </h2>
 
-          <p className="mt-8 text-lg text-gray-300 leading-relaxed">
+          <p className="mt-8 text-lg text-green-50 leading-relaxed max-w-2xl mx-auto">
             Whether you own a homestay, drive a cab, guide treks or simply
             dream of building a career in tourism —
             TOUREX welcomes you.
@@ -264,7 +271,7 @@ export default function JoinUsPage() {
             <Link 
               href="https://wa.me/918768683198?text=Hi Tourex! I'm interested in the Join Us network."
               target="_blank"
-              className="bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all"
+              className="bg-white text-green-700 px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
             >
               Join The Network
             </Link>
@@ -272,7 +279,7 @@ export default function JoinUsPage() {
             <Link 
               href="https://wa.me/918768683198"
               target="_blank"
-              className="border border-white/20 px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+              className="border border-white/30 px-8 py-4 rounded-full hover:bg-white/10 transition-all font-bold"
             >
               Contact TOUREX
             </Link>
@@ -281,17 +288,26 @@ export default function JoinUsPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10 px-6 bg-black">
+      <footer className="border-t border-gray-100 py-10 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-          <div>
-            <h3 className="text-2xl font-black">TOUREX</h3>
+          <div className="flex items-center gap-4">
+            <Image 
+              src="/images/Logo.jpeg" 
+              alt="Tourex Logo" 
+              width={50} 
+              height={50} 
+              className="rounded-xl object-contain"
+            />
+            <div>
+              <h3 className="text-2xl font-black text-[#0f172a]">TOUREX</h3>
 
-            <p className="text-gray-400 mt-1">
-              Stress-Free North Bengal Escapes
-            </p>
+              <p className="text-gray-500 mt-1">
+                Stress-Free North Bengal Escapes
+              </p>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-gray-300 text-sm">
+          <div className="flex flex-wrap gap-6 text-gray-600 text-sm font-medium">
             <span>📞 8116413984</span>
             <span>📞 8768683198</span>
             <span>📸 @tou.rex</span>
