@@ -45,40 +45,42 @@ export default function JoinUsPage() {
       <Navbar />
       
       {/* HERO */}
-      <section className="relative h-[70vh] overflow-hidden flex items-center justify-center bg-[#020617]">
+      <section className="relative h-[70vh] overflow-hidden flex items-center justify-center bg-[var(--foreground)] perspective-2000">
         <img
           src="https://images.unsplash.com/photo-1581390212720-639535798993?auto=format&fit=crop&w=1920&q=80"
-          className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale-[0.5]"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale-[0.2] brightness-75"
           alt="North Bengal Tea Garden"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-transparent to-white" />
+        {/* Premium Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--foreground)]/80 via-transparent to-[var(--foreground)]/90 z-10" />
+        <div className="absolute inset-0 bg-black/30 z-10" />
 
-        <div className="relative z-10 text-center max-w-5xl px-6 flex flex-col items-center">
-          <span className="text-green-400 font-bold uppercase tracking-[0.4em] text-xs mb-6 animate-fade-rise">
+        <div className="relative z-20 text-center max-w-5xl px-6 flex flex-col items-center preserve-3d">
+          <span className="text-primary font-black uppercase tracking-[0.6em] text-[10px] md:text-xs mb-6 animate-fade-rise drop-shadow-2xl hero-3d-layer">
             Collective Network
           </span>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black mt-5 leading-[1.1] text-white tracking-tight animate-fade-rise">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black mt-5 leading-[1.1] text-white tracking-tighter animate-fade-rise hero-3d-layer drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
             JOIN US
           </h1>
 
-          <p className="mt-8 text-xl md:text-2xl lg:text-3xl text-gray-200 italic font-display max-w-2xl animate-fade-rise drop-shadow-md">
+          <p className="mt-8 text-xl md:text-2xl lg:text-3xl text-slate-200 italic font-display max-w-2xl animate-fade-rise drop-shadow-lg opacity-90 hero-3d-layer">
             Building a collaborative travel ecosystem for the North Bengal collective.
           </p>
 
-          <div className="mt-12 flex justify-center gap-8 flex-wrap animate-fade-rise">
+          <div className="mt-12 flex justify-center gap-8 flex-wrap animate-fade-rise hero-3d-layer">
             <Link 
               href="https://wa.me/918768683198?text=Hi Tourex! I want to join as a partner."
               target="_blank"
-              className="bg-[#020617] text-white px-10 py-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-green-700 transition-all shadow-2xl"
+              className="bg-primary text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-primary-dark transition-all shadow-2xl"
             >
               Become A Partner
             </Link>
 
             <button 
               onClick={() => document.getElementById('about-platform')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-b border-[#020617]/20 text-[#020617] font-black text-xs uppercase tracking-widest hover:text-green-700 transition-all pb-1"
+              className="border-b-2 border-primary/30 text-white font-black text-xs uppercase tracking-widest hover:text-primary transition-all pb-1"
             >
               Learn More
             </button>

@@ -61,27 +61,28 @@ export default function PackagesPage() {
       <Navbar />
       
       {/* HERO SECTION */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-[#020617]">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-[var(--foreground)] perspective-2000">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop"
-            className="w-full h-full object-cover opacity-40 grayscale-[0.3]"
+            className="w-full h-full object-cover opacity-50 grayscale-[0.2] brightness-75"
             alt="North Bengal Mountains"
           />
         </div>
         
         {/* Advanced Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-transparent to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--foreground)]/80 via-transparent to-[var(--foreground)]/90 z-10" />
+        <div className="absolute inset-0 bg-black/30 z-10" />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl flex flex-col items-center">
-          <span className="text-green-400 font-bold uppercase tracking-[0.4em] text-xs mb-6 animate-fade-rise">
+        <div className="relative z-20 text-center px-6 max-w-5xl flex flex-col items-center preserve-3d">
+          <span className="text-primary font-black uppercase tracking-[0.6em] text-[10px] md:text-xs mb-6 animate-fade-rise drop-shadow-2xl hero-3d-layer">
             Curated Journeys
           </span>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tight leading-[1.1] text-white animate-fade-rise">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tighter leading-[1.1] text-white animate-fade-rise hero-3d-layer drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
             PACKAGES
           </h1>
 
-          <p className="mt-8 text-xl md:text-2xl text-gray-200 italic font-display max-w-2xl animate-fade-rise drop-shadow-md">
+          <p className="mt-8 text-xl md:text-2xl text-slate-200 italic font-display max-w-2xl animate-fade-rise drop-shadow-lg opacity-90 hero-3d-layer">
             Sensory escapes designed for those who seek the silence of the hills.
           </p>
         </div>
