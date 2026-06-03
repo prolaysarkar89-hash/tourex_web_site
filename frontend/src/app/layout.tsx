@@ -91,7 +91,7 @@ export default function RootLayout({
               "@type": "TravelAgency",
               "name": "Tourex",
               "url": "https://www.tourextravel.com",
-              "logo": "https://www.tourextravel.com/logo.png",
+              "logo": "https://www.tourextravel.com/images/Logo.jpeg",
               "image": "https://www.tourextravel.com/og-image.jpg",
               "description": "Premium North Bengal and Dooars travel agency in Siliguri offering Darjeeling, Sikkim, Silk Route and jungle safari packages.",
               "telephone": "+91-8768683198",

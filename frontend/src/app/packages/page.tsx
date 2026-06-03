@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
 export default function PackagesPage() {
@@ -67,7 +68,14 @@ export default function PackagesPage() {
           alt="North Bengal Mountains"
         />
 
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+        <div className="relative z-10 text-center px-6 max-w-4xl flex flex-col items-center">
+          <Image 
+            src="/images/Logo.jpeg" 
+            alt="Tourex Logo" 
+            width={120} 
+            height={120} 
+            className="rounded-3xl shadow-2xl mb-8 animate-fade-in"
+          />
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
             TOUREX
           </h1>
@@ -275,11 +283,20 @@ export default function PackagesPage() {
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-10 px-6 bg-black/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-          <div>
-            <h3 className="text-2xl font-black">TOUREX</h3>
-            <p className="text-gray-400 mt-1">
-              Stress-Free North Bengal Escapes
-            </p>
+          <div className="flex items-center gap-4">
+            <Image 
+              src="/images/Logo.jpeg" 
+              alt="Tourex Logo" 
+              width={50} 
+              height={50} 
+              className="rounded-xl object-contain"
+            />
+            <div>
+              <h3 className="text-2xl font-black">TOUREX</h3>
+              <p className="text-gray-400 mt-1">
+                Stress-Free North Bengal Escapes
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-6 text-gray-300 text-sm">

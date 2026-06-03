@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Camera, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
@@ -8,8 +9,17 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="text-4xl font-black tracking-tighter mb-6 block">
-              TOUREX<span className="text-[var(--primary)]">.</span>
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <Image 
+                src="/images/Logo.jpeg" 
+                alt="Tourex Logo" 
+                width={50} 
+                height={50} 
+                className="rounded-lg object-contain brightness-90 group-hover:brightness-100 transition-all"
+              />
+              <span className="text-3xl font-black tracking-tighter text-white">
+                TOUREX<span className="text-[var(--primary)]">.</span>
+              </span>
             </Link>
             <p className="text-gray-400 max-w-sm text-lg leading-relaxed">
               Stress-Free North Bengal Escapes. We curate local experiences that help you escape the city noise and find peace in nature.
