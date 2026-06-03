@@ -44,35 +44,32 @@ const About = () => {
               />
             </div>
             {/* Elegant Floating Element */}
-            <div className="absolute -bottom-12 -right-12 bg-green-700 text-white p-10 rounded-3xl shadow-2xl hidden md:block animate-fade-rise">
+            <div className="absolute -bottom-12 -right-12 bg-accent text-primary p-10 rounded-3xl shadow-2xl hidden md:block animate-fade-rise border border-primary/20">
               <p className="text-4xl font-display font-black mb-1 italic">100%</p>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80">Local Soul</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-black opacity-80">Local Soul</p>
             </div>
           </div>
 
           <div ref={textRef} className="lg:pl-10">
-            <span className="about-reveal inline-block text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-8">The Heritage Collective</span>
-            <h2 className="about-reveal text-5xl md:text-7xl font-display font-black mb-10 leading-[1.1] tracking-tighter text-[#020617]">
+            <span className="about-reveal inline-block text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-8">The Heritage Collective</span>
+            <h2 className="about-reveal text-5xl md:text-7xl font-display font-black mb-10 leading-[1.1] tracking-tighter text-accent">
               Not just a trip.<br />
-              <span className="italic font-normal text-green-800">A transformation.</span>
+              <span className="italic font-normal text-primary">A transformation.</span>
             </h2>
-            <div className="space-y-8 text-xl text-gray-600 leading-relaxed font-medium">
+            <div className="space-y-8 text-xl text-secondary-text leading-relaxed font-medium">
               <p className="about-reveal">
-                Tourex was born from a simple realization: the modern world has lost its connection to silence. We don&apos;t just sell itineraries; we curate <span className="text-[#020617] font-bold">sensory escapes</span> that recalibrate your soul against the backdrop of the Himalayas.
-              </p>
-              <p className="about-reveal">
-                <span className="text-[#020617] font-bold italic">Based in the heart of Siliguri</span>, we operate as a collective of local explorers. We identify the hidden river canyons of Yelbong and the quietest tea garden retreats in Sikkim—places where the city noise cannot follow.
+                Tourex was born from a simple realization: the modern world has lost its connection to silence. We don&apos;t just sell itineraries; we curate <span className="text-accent font-black">sensory escapes</span> that recalibrate your soul against the backdrop of the Himalayas.
               </p>
             </div>
             
             <div className="about-reveal mt-16 grid grid-cols-2 gap-12 border-t border-gray-100 pt-16">
               <div className="flex flex-col gap-2">
-                <h4 className="text-4xl font-display font-black text-[#020617]">10+ Years</h4>
-                <p className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">Deep Heritage</p>
+                <h4 className="text-4xl font-display font-black text-accent tracking-tighter">10+ Years</h4>
+                <p className="text-[10px] text-primary font-black uppercase tracking-[0.2em]">Deep Heritage</p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-4xl font-display font-black text-[#020617]">5k+</h4>
-                <p className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">Escaped with us</p>
+                <h4 className="text-4xl font-display font-black text-accent tracking-tighter">5k+</h4>
+                <p className="text-[10px] text-primary font-black uppercase tracking-[0.2em]">Escaped with us</p>
               </div>
             </div>
           </div>

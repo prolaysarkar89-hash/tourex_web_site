@@ -1,53 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #1A1A1A;
-  --primary: #166534;
-  --primary-dark: #14532D;
-  --secondary-text: #4B5563;
+  --background: #ffffff;
+  --foreground: #0a0f0d;
+  --primary: #d4af37; /* Premium Gold */
+  --primary-dark: #b8860b;
+  --accent: #143621; /* Deep Forest Green */
+  --secondary-text: #5c6b5e;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-accent: var(--accent);
   --color-secondary-text: var(--secondary-text);
   --font-playfair: var(--font-playfair);
   --font-inter: var(--font-inter);
 }
 
-/* Cinematic Ken Burns */
-@keyframes ken-burns {
-  0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.05) translate(-1%, -1%); }
-  100% { transform: scale(1.1) translate(1%, 1%); }
+/* Stunning Cinematic Entrance */
+@keyframes cinematic-entrance {
+  0% { transform: scale(1.2) translateY(5%); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
-.animate-ken-burns {
-  animation: ken-burns 30s ease-in-out infinite alternate;
+.animate-cinematic {
+  animation: cinematic-entrance 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* 3D Perspective Utilities */
-.perspective-1000 {
-  perspective: 1000px;
+/* Advanced 3D Utilities */
+.perspective-2000 {
+  perspective: 2000px;
 }
 
 .preserve-3d {
   transform-style: preserve-3d;
 }
 
-.card-3d-hover {
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+.hero-3d-layer {
+  transform: translateZ(50px);
 }
 
-.card-3d-hover:hover {
-  transform: rotateY(8deg) rotateX(5deg) translateZ(20px);
-  box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.15);
+.card-premium-hover {
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.2, 1);
 }
 
-.translate-z-10 {
-  transform: translateZ(30px);
+.card-premium-hover:hover {
+  transform: translateY(-15px) rotateX(4deg) rotateY(-2deg);
+  box-shadow: 0 30px 60px -12px rgba(20, 54, 33, 0.15), 
+              0 18px 36px -18px rgba(0, 0, 0, 0.3);
 }
 
 @layer base {
@@ -55,65 +57,31 @@
     background-color: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-family: var(--font-inter);
-    overflow-x: hidden;
   }
   
-  h1, h2, h3, h4, .font-display {
+  h1, h2, h3, .font-display {
     font-family: var(--font-playfair);
-  }
-  
-  section {
-    scroll-margin-top: 80px;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-green-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:bg-green-800 hover:shadow-xl hover:-translate-y-1 active:scale-95;
-  }
-
-  .animate-fade-rise {
-    animation: fade-rise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .animate-fade-rise-delay {
-    animation: fade-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-rise-delay-2 {
-    animation: fade-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-    opacity: 0;
+  .btn-gold {
+    @apply bg-[#d4af37] text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] transition-all shadow-[0_15px_30px_rgba(212,175,55,0.3)] hover:bg-[#b8860b] hover:shadow-[0_20px_40px_rgba(212,175,55,0.4)] hover:-translate-y-1 active:scale-95;
   }
 }
 
-@keyframes fade-rise {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Custom Scrollbar */
+/* Custom Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f8f9f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #d4af37;
   border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
 }
