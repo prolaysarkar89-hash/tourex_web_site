@@ -12,13 +12,13 @@ const libraries: ("places" | "drawing" | "geometry" | "visualization")[] = ["pla
 
 const SearchBar = () => {
   const [input, setInput] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState('lodging'); // lodging, taxi_stand, car_rental
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<any[]>([]);
   const [showResults, setShowResults] = useState(false);
-  const [userLocation, setUserLocation] = useState(null);
+  const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
   const [showMap, setShowMap] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [showPrivacyNotice, setShowPrivacyNotice] = useState(false);
@@ -29,9 +29,9 @@ const SearchBar = () => {
   const [sortBy, setSortBy] = useState('prominence');
   const [openNow, setOpenNow] = useState(false);
 
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState<any>(null);
 
-  const suggestionRef = useRef(null);
+  const suggestionRef = useRef<HTMLDivElement>(null);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -40,8 +40,8 @@ const SearchBar = () => {
   });
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (suggestionRef.current && !suggestionRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (suggestionRef.current && !suggestionRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
     };
@@ -49,7 +49,7 @@ const SearchBar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const fetchSuggestions = useMemo(() => debounce(async (val) => {
+  const fetchSuggestions = useMemo(() => debounce(async (val: string) => {
     if (val.length < 3) {
       setSuggestions([]);
       return;
@@ -65,13 +65,13 @@ const SearchBar = () => {
     }
   }, 300), []);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setInput(val);
     fetchSuggestions(val);
   };
 
-  const handleSearch = async (query = input, overrideParams = {}) => {
+  const handleSearch = async (query = input, overrideParams: any = {}) => {
     setLoading(true);
     setShowResults(true);
     try {
@@ -95,7 +95,7 @@ const SearchBar = () => {
     }
   };
 
-  const handleSelectSuggestion = async (suggestion) => {
+  const handleSelectSuggestion = async (suggestion: any) => {
     setInput(suggestion.description);
     setShowSuggestions(false);
     
