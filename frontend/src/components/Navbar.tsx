@@ -62,28 +62,31 @@ const Navbar = () => {
           </div>
         </Link>
         
-        {/* Desktop Navigation - gap: 2.5rem (gap-10) exceeds 2rem minimum */}
-        <div className="hidden lg:flex items-center gap-10">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
           <Link href="/" className={`${navLinkClass} ${pathname === '/' ? "text-green-600" : ""}`}>
             Home
           </Link>
           <Link href="/packages" className={`${navLinkClass} ${pathname === '/packages' ? "text-green-600" : ""}`}>
-            Journeys
+            Packages
           </Link>
-          <Link href="/blog" className={`${navLinkClass} ${pathname?.startsWith('/blog') ? "text-green-600" : ""}`}>
-            Stories
-          </Link>
+          <button onClick={() => scrollTo('about')} className={navLinkClass}>
+            About Us
+          </button>
+          <button onClick={() => scrollTo('trust')} className={navLinkClass}>
+            Why Us
+          </button>
           <Link href="/join-us" className={`${navLinkClass} ${pathname === '/join-us' ? "text-green-600" : ""}`}>
-            Collective
+            Join Us
           </Link>
         </div>
 
-        {/* CTA Section - flex-shrink-0 prevents compression */}
+        {/* CTA Section */}
         <div className="hidden lg:flex items-center flex-shrink-0 ml-4">
           <Link 
             href="https://wa.me/918768683198" 
             target="_blank" 
-            className="bg-green-700 text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-black transition-all hover:scale-105 hover:bg-green-800 shadow-xl shadow-green-900/10 active:scale-95"
+            className="bg-green-700 text-white px-7 py-3 rounded-full text-[10px] uppercase tracking-widest font-black transition-all hover:scale-105 hover:bg-green-800 shadow-xl shadow-green-900/10 active:scale-95"
           >
             Plan My Trip
           </Link>
@@ -115,13 +118,16 @@ const Navbar = () => {
               Home <span className="text-green-600 text-sm">01</span>
             </Link>
             <Link href="/packages" className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center" onClick={() => setIsOpen(false)}>
-              Journeys <span className="text-green-600 text-sm">02</span>
+              Packages <span className="text-green-600 text-sm">02</span>
             </Link>
-            <Link href="/blog" className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center" onClick={() => setIsOpen(false)}>
-              Stories <span className="text-green-600 text-sm">03</span>
-            </Link>
+            <button onClick={() => { setIsOpen(false); scrollTo('about'); }} className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center">
+              About Us <span className="text-green-600 text-sm">03</span>
+            </button>
+            <button onClick={() => { setIsOpen(false); scrollTo('trust'); }} className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center">
+              Why Us <span className="text-green-600 text-sm">04</span>
+            </button>
             <Link href="/join-us" className="text-2xl font-display font-black text-slate-900 border-b border-slate-100 pb-4 flex justify-between items-center" onClick={() => setIsOpen(false)}>
-              Collective <span className="text-green-600 text-sm">04</span>
+              Join Us <span className="text-green-600 text-sm">05</span>
             </Link>
             
             <Link 
