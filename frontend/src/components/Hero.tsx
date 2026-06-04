@@ -53,20 +53,20 @@ const Hero = () => {
       </div>
       
       {/* Premium Cinematic Overlays */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0a0f0d]/80 via-transparent to-[#0a0f0d]/90" />
-      <div className="absolute inset-0 z-10 bg-black/30" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0a0f0d]/90 via-transparent to-[#0a0f0d]/95" />
+      <div className="absolute inset-0 z-10 bg-black/50 backdrop-blur-[1px]" />
 
       <div className="relative z-20 px-8 max-w-7xl mx-auto pt-20 flex flex-col items-center preserve-3d">
         <span className="hero-3d-layer text-primary font-black uppercase tracking-[0.6em] text-[10px] md:text-xs mb-8 drop-shadow-2xl">
           The Tourex Collective
         </span>
         
-        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-zinc-100 mb-10 tracking-tighter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-white mb-10 tracking-tighter drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
           NORTH<br />
           <span className="text-primary italic font-normal tracking-normal">Bengal.</span>
         </h1>
         
-        <p className="hero-3d-layer text-lg sm:text-xl md:text-2xl font-display italic text-slate-200 mb-16 max-w-2xl drop-shadow-lg opacity-90">
+        <p className="hero-3d-layer text-lg sm:text-xl md:text-2xl font-display italic text-slate-100 mb-16 max-w-2xl drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] opacity-95">
           Curating silence and cinematic escapes across the Himalayas.
         </p>
 

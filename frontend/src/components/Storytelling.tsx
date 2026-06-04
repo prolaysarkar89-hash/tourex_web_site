@@ -48,7 +48,7 @@ const Storytelling = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-[#0f172a]/40" />
+        <div className="absolute inset-0 bg-[#0f172a]/70 backdrop-blur-[2px]" />
       </div>
 
       {/* Right Side: Peace */}
@@ -61,16 +61,16 @@ const Storytelling = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
       </div>
 
       {/* Centered Text Overlay */}
       <div className="relative z-20 text-center pointer-events-none px-6">
-        <h2 className="story-text text-6xl md:text-9xl font-display font-black tracking-[-4px] text-zinc-100 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-[0.9]">
+        <h2 className="story-text text-6xl md:text-9xl font-display font-black tracking-[-4px] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,0.7)] leading-[0.9]">
           Same person.<br />
           <span className="text-green-500 italic font-normal drop-shadow-[0_10px_30px_rgba(0,0,0,0.3)]">Different life.</span>
         </h2>
-        <p className="mt-12 text-xl md:text-2xl text-zinc-200 max-w-2xl mx-auto font-display italic opacity-0 story-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+        <p className="mt-12 text-xl md:text-2xl text-slate-100 max-w-2xl mx-auto font-display italic opacity-0 story-text drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]">
           Escape the monochrome of the city. Reconnect with the vibrant soul of the wild North.
         </p>
       </div>
