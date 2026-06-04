@@ -61,7 +61,7 @@ const Hero = () => {
           The Tourex Collective
         </span>
         
-        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-white mb-10 tracking-tighter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-zinc-100 mb-10 tracking-tighter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
           NORTH<br />
           <span className="text-primary italic font-normal tracking-normal">Bengal.</span>
         </h1>
