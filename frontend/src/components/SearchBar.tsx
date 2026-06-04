@@ -163,45 +163,45 @@ const SearchBar = () => {
       <div className="flex gap-4 mb-4 justify-center">
         <button 
           onClick={() => { setCategory('lodging'); if(showResults) handleSearch(input, {type: 'lodging'}); }}
-          className={`flex items-center gap-2 px-6 py-2.5 rounded-full transition-all shadow-sm ${category === 'lodging' ? 'bg-[#15803d] text-white' : 'bg-white/80 text-gray-700 hover:bg-white'}`}
+          className={`flex items-center gap-2 px-6 py-2.5 rounded-full transition-all shadow-sm ${category === 'lodging' ? 'bg-primary text-white' : 'bg-white/80 text-text-secondary hover:bg-white'}`}
         >
           <Hotel size={18} />
-          <span className="font-bold">Hotels & Stays</span>
+          <span className="font-semibold">Hotels & Stays</span>
         </button>
         <button 
           onClick={() => { setCategory('taxi_stand'); if(showResults) handleSearch(input, {type: 'taxi_stand'}); }}
-          className={`flex items-center gap-2 px-6 py-2.5 rounded-full transition-all shadow-sm ${category === 'taxi_stand' ? 'bg-[#15803d] text-white' : 'bg-white/80 text-gray-700 hover:bg-white'}`}
+          className={`flex items-center gap-2 px-6 py-2.5 rounded-full transition-all shadow-sm ${category === 'taxi_stand' ? 'bg-primary text-white' : 'bg-white/80 text-text-secondary hover:bg-white'}`}
         >
           <Car size={18} />
-          <span className="font-bold">Cabs & Cars</span>
+          <span className="font-semibold">Cabs & Cars</span>
         </button>
       </div>
 
-      <div className="relative group shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-3xl overflow-visible bg-white/10 backdrop-blur-2xl p-2 flex items-center border border-white/20">
-        <div className="pl-6 text-green-400">
-          <Search size={28} />
+      <div className="relative group shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-3xl overflow-visible bg-white p-2 flex items-center border border-slate-200">
+        <div className="pl-6 text-primary">
+          <Search size={24} />
         </div>
         <input
           type="text"
           value={input}
           onChange={handleInputChange}
           onFocus={() => input.length >= 3 && setShowSuggestions(true)}
-          placeholder={category === 'lodging' ? "Where do you want to stay? (e.g. Yelbong, Siliguri)" : "Where do you need a ride? (e.g. Bagdogra to Gangtok)"}
-          className="flex-1 px-6 py-6 text-xl outline-none text-white placeholder-gray-400 font-display font-medium bg-transparent"
+          placeholder={category === 'lodging' ? "Where do you want to stay?" : "Where do you need a ride?"}
+          className="flex-1 px-6 py-6 text-lg outline-none text-text-primary placeholder-slate-400 font-medium bg-transparent"
         />
         
         <button 
           onClick={() => setShowPrivacyNotice(true)}
-          className="p-3 text-gray-300 hover:text-green-400 transition-colors rounded-2xl hover:bg-white/5 flex items-center gap-2 mr-2"
+          className="p-3 text-text-light hover:text-primary transition-colors rounded-2xl hover:bg-slate-50 flex items-center gap-2 mr-2"
           title="Use my location"
         >
-          <Navigation size={22} />
-          <span className="hidden lg:inline text-sm font-bold uppercase tracking-widest">Near me</span>
+          <Navigation size={20} />
+          <span className="hidden lg:inline text-xs font-bold uppercase tracking-widest">Near me</span>
         </button>
 
         <button 
           onClick={() => handleSearch()}
-          className="bg-green-700 text-white px-10 py-5 rounded-2xl font-black hover:bg-green-600 transition-all transform active:scale-95 shadow-xl shadow-green-900/20 uppercase tracking-widest text-sm"
+          className="btn-primary py-4 px-10 text-sm"
         >
           Discover
         </button>
@@ -210,24 +210,21 @@ const SearchBar = () => {
         {showSuggestions && suggestions.length > 0 && (
           <div 
             ref={suggestionRef}
-            className="absolute top-full left-0 right-0 mt-4 bg-[#020617]/95 backdrop-blur-3xl rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300 z-[60]"
+            className="absolute top-full left-0 right-0 mt-4 bg-white rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300 z-[60]"
           >
             {suggestions.map((s) => (
               <button
                 key={s.place_id}
                 onClick={() => handleSelectSuggestion(s)}
-                className="w-full text-left px-8 py-5 hover:bg-white/5 flex items-start gap-5 transition-colors border-b border-white/5 last:border-0 group"
+                className="w-full text-left px-8 py-5 hover:bg-slate-50 flex items-start gap-5 transition-colors border-b border-slate-50 last:border-0 group"
               >
-                <MapPin className="text-green-500 mt-1 shrink-0 group-hover:scale-110 transition-transform" size={20} />
+                <MapPin className="text-primary mt-1 shrink-0 group-hover:scale-110 transition-transform" size={20} />
                 <div>
-                  <div className="font-bold text-white text-lg">{s.structured_formatting.main_text}</div>
-                  <div className="text-sm text-gray-400">{s.structured_formatting.secondary_text}</div>
+                  <div className="font-semibold text-text-primary text-lg">{s.structured_formatting.main_text}</div>
+                  <div className="text-sm text-text-light">{s.structured_formatting.secondary_text}</div>
                 </div>
               </button>
             ))}
-            <div className="px-8 py-3 bg-white/5 text-[10px] text-gray-500 text-right uppercase tracking-[0.2em] font-bold">
-              Powered by Google Global Data
-            </div>
           </div>
         )}
       </div>

@@ -31,73 +31,65 @@ const Navbar = () => {
   const isDarkHeroPage = pathname === '/' || pathname === '/packages' || pathname === '/join-us';
 
   const navBg = scrolled 
-    ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
+    ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/50 shadow-sm"
     : "bg-transparent";
 
-  // Using simple colors for crisp GPU-safe rendering without duplicate drop-shadow ghosting
   const textColor = scrolled 
     ? "text-slate-900" 
     : (isDarkHeroPage ? "text-white" : "text-slate-900");
 
-  const subTextColor = scrolled 
-    ? "text-slate-500" 
-    : (isDarkHeroPage ? "text-slate-200" : "text-slate-500");
-
-  const navLinkClass = `text-sm font-bold tracking-wide transition-all duration-300 hover:text-green-500 whitespace-nowrap ${textColor}`;
+  const navLinkClass = `text-sm font-semibold tracking-wide transition-all duration-300 whitespace-nowrap ${textColor} hover:text-sky-600`;
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${navBg} ${scrolled ? 'py-3' : 'py-5'}`}>
-      <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex items-center justify-between">
+    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${navBg} ${scrolled ? 'py-4' : 'py-6'}`}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
         
-        {/* Logo Section - flex-shrink-0 prevents compression */}
-        <Link href="/" className="flex items-center gap-3 md:gap-4 flex-shrink-0 group">
-          <div className="relative w-10 h-10 md:w-12 h-12 overflow-hidden rounded-xl shadow-lg shadow-black/5 border border-white/10 flex-shrink-0">
+        {/* Logo Section */}
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
+          <div className="relative w-10 h-10 overflow-hidden rounded-lg flex-shrink-0">
              <Image 
               src="/images/Logo.jpeg" 
               alt="Tourex Logo" 
               fill
               priority
               className="object-cover transition-transform duration-700 group-hover:scale-110"
-              sizes="(max-width: 768px) 40px, 48px"
             />
           </div>
-          <div className="flex flex-col justify-center leading-tight">
-            <span className={`font-display text-xl md:text-2xl font-black tracking-tight transition-colors duration-500 antialiased ${textColor}`}>
-              TOUREX
-            </span>
-            <span className={`text-[7px] md:text-[8px] uppercase tracking-[0.25em] font-black mt-0.5 transition-colors duration-500 ${subTextColor}`}>
-              Stress-Free North Bengal Escapes
-            </span>
-          </div>
+          <span className={`font-display text-2xl font-bold tracking-tight transition-colors duration-500 ${textColor}`}>
+            TOUREX
+          </span>
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
-          <Link href="/" className={`${navLinkClass} ${pathname === '/' ? "text-green-600" : ""}`}>
+        <div className="hidden lg:flex items-center gap-10">
+          <Link href="/" className={`${navLinkClass} ${pathname === '/' ? "text-sky-600" : ""}`}>
             Home
           </Link>
-          <Link href="/packages" className={`${navLinkClass} ${pathname === '/packages' ? "text-green-600" : ""}`}>
-            Packages
+          <Link href="/packages" className={`${navLinkClass} ${pathname === '/packages' ? "text-sky-600" : ""}`}>
+            Destinations
+          </Link>
+          <Link href="/packages" className={`${navLinkClass}`}>
+            Experiences
+          </Link>
+          <Link href="/join-us" className={`${navLinkClass} ${pathname === '/join-us' ? "text-sky-600" : ""}`}>
+            Local Partners
           </Link>
           <button onClick={() => scrollTo('about')} className={navLinkClass}>
-            About Us
+            About
           </button>
-          <button onClick={() => scrollTo('trust')} className={navLinkClass}>
-            Why Us
+          <button onClick={() => scrollTo('contact')} className={navLinkClass}>
+            Contact
           </button>
-          <Link href="/join-us" className={`${navLinkClass} ${pathname === '/join-us' ? "text-green-600" : ""}`}>
-            Join Us
-          </Link>
         </div>
 
         {/* CTA Section */}
-        <div className="hidden lg:flex items-center flex-shrink-0 ml-4">
+        <div className="hidden lg:flex items-center flex-shrink-0">
           <Link 
             href="https://wa.me/918768683198" 
             target="_blank" 
-            className="bg-green-700 text-white px-7 py-3 rounded-full text-[10px] uppercase tracking-widest font-black transition-all hover:scale-105 hover:bg-green-800 shadow-xl shadow-green-900/10 active:scale-95"
+            className="btn-primary py-2.5 px-6 text-sm"
           >
-            Plan My Trip
+            Plan Your Journey
           </Link>
         </div>
         

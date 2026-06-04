@@ -42,42 +42,42 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-40 bg-white overflow-hidden">
+    <section id="faq" className="section-padding bg-white overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <div className="container mx-auto px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-24">
-             <span className="text-green-700 font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Concierge</span>
-            <h2 className="text-5xl md:text-7xl font-display font-black text-[#020617] mb-8 tracking-tighter">
-              Common <span className="italic font-normal text-green-800">Questions.</span>
+          <div className="text-center mb-20">
+             <span className="text-primary font-bold uppercase tracking-widest text-sm mb-6 block">Concierge</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 tracking-tight">
+              Common <span className="text-primary italic">Questions.</span>
             </h2>
-            <p className="text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">Everything you need to know about planning your next transformation with the Tourex Collective.</p>
+            <p className="text-text-body font-medium max-w-xl mx-auto leading-relaxed">Everything you need to know about planning your next transformation with the Tourex Collective.</p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                className={`group border-b border-gray-100 transition-all duration-500 ${
-                  activeIndex === index ? 'bg-gray-50/50' : 'bg-transparent'
+                className={`group border-b border-slate-100 transition-all duration-500 ${
+                  activeIndex === index ? 'bg-sky/50' : 'bg-transparent'
                 }`}
               >
                 <button
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between py-10 px-6 text-left"
+                  className="w-full flex items-center justify-between py-8 px-6 text-left"
                 >
-                  <span className={`text-xl md:text-2xl font-display font-bold tracking-tight transition-colors duration-500 ${
-                    activeIndex === index ? 'text-green-800' : 'text-[#020617]'
+                  <span className={`text-xl font-semibold tracking-tight transition-colors duration-500 ${
+                    activeIndex === index ? 'text-primary' : 'text-text-primary'
                   }`}>
                     {faq.question}
                   </span>
                   <div className={`flex-shrink-0 ml-4 transition-transform duration-500 ${
-                    activeIndex === index ? 'rotate-180 text-green-800' : 'text-gray-300'
+                    activeIndex === index ? 'rotate-180 text-primary' : 'text-text-muted'
                   }`}>
-                    <ChevronDown size={28} strokeWidth={1.5} />
+                    <ChevronDown size={24} />
                   </div>
                 </button>
                 <div 
@@ -85,7 +85,7 @@ const FAQ = () => {
                     activeIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-12 text-gray-500 text-lg leading-relaxed font-medium max-w-3xl">
+                  <div className="px-6 pb-8 text-text-body text-base leading-relaxed max-w-3xl">
                     {faq.answer}
                   </div>
                 </div>

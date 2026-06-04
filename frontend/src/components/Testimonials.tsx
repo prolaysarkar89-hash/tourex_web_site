@@ -31,13 +31,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-slate-50">
+    <section id="testimonials" className="section-padding bg-sky">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-display font-black tracking-tight text-[#0f172a] mb-6">
-            Trusted by <span className="text-[#15803d]">Adventurers</span>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-6">
+            Trusted by <span className="text-primary">Adventurers</span>
           </h2>
-          <p className="text-lg text-slate-600 font-medium">
+          <p className="text-lg text-text-body">
             Hear from the people who escaped the ordinary and discovered the soul of North Bengal with us.
           </p>
         </div>
@@ -46,14 +46,14 @@ const Testimonials = () => {
           {reviews.map((r, i) => (
             <div 
               key={i} 
-              className="group relative bg-white p-8 rounded-3xl border border-slate-200 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2 flex flex-col h-full"
+              className="card-premium flex flex-col h-full"
             >
-              <div className="absolute top-8 right-8 text-slate-100 group-hover:text-green-100 transition-colors duration-500">
-                <Quote size={48} fill="currentColor" />
+              <div className="absolute top-8 right-8 text-slate-100 group-hover:text-sky-100 transition-colors duration-500">
+                <Quote size={40} fill="currentColor" />
               </div>
               
-              <div className="relative mb-8">
-                <div className="relative w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-slate-50 ring-offset-0 group-hover:ring-green-50 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-sm">
                   <Image 
                     src={r.img} 
                     alt={r.name} 
@@ -64,14 +64,14 @@ const Testimonials = () => {
               </div>
 
               <div className="flex-grow">
-                <p className="text-slate-600 leading-relaxed mb-8 text-[1.05rem] font-medium">
+                <p className="text-text-body leading-relaxed mb-6 text-base italic">
                   &quot;{r.text}&quot;
                 </p>
               </div>
 
               <div className="mt-auto pt-6 border-t border-slate-100">
-                <h4 className="text-lg font-bold text-[#0f172a] tracking-tight">{r.name}</h4>
-                <p className="text-xs text-green-700 font-bold uppercase tracking-widest mt-1 opacity-80">{r.role}</p>
+                <h4 className="text-lg font-bold text-text-primary tracking-tight">{r.name}</h4>
+                <p className="text-sm text-primary font-semibold mt-1">{r.role}</p>
               </div>
             </div>
           ))}

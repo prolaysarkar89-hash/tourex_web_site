@@ -53,34 +53,28 @@ const Hero = () => {
       </div>
       
       {/* Premium Cinematic Overlays */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0a0f0d]/90 via-transparent to-[#0a0f0d]/95" />
-      <div className="absolute inset-0 z-10 bg-black/50 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 z-10 bg-black/45 backdrop-blur-[1px]" />
 
-      <div className="relative z-20 px-8 max-w-7xl mx-auto pt-20 flex flex-col items-center preserve-3d">
-        <span className="hero-3d-layer text-primary font-black uppercase tracking-[0.6em] text-[10px] md:text-xs mb-8 drop-shadow-2xl">
-          The Tourex Collective
-        </span>
-        
-        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-green-400 mb-10 tracking-tighter drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
-          NORTH<br />
-          <span className="text-white italic font-normal tracking-normal">Bengal.</span>
+      <div className="relative z-20 px-8 max-w-7xl mx-auto pt-20 flex flex-col items-center">
+        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold mb-8 max-w-5xl leading-tight">
+          Discover Hidden Destinations Across the Himalayas
         </h1>
         
-        <p className="hero-3d-layer text-lg sm:text-xl md:text-2xl font-display italic text-green-300 mb-16 max-w-2xl drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)] opacity-95">
-          Curating silence and cinematic escapes across the Himalayas.
+        <p className="text-xl md:text-2xl text-slate-100 mb-12 max-w-3xl opacity-90 font-medium">
+          Connect directly with trusted local guides, transport operators and unique travel experiences.
         </p>
 
         {/* 3D Floating Search Bar */}
-        <div className="hero-3d-layer w-full max-w-5xl transition-transform duration-700 hover:scale-[1.02]">
+        <div className="w-full max-w-4xl mb-16">
           <SearchBar />
         </div>
 
-        <div className="hero-3d-layer flex flex-col sm:flex-row gap-10 justify-center items-center mt-20">
-          <Link href="/packages" className="btn-gold">
-            Reserve Your Journey
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <Link href="/packages" className="btn-primary py-4 px-10 text-lg">
+            Explore Destinations
           </Link>
-          <Link href="https://wa.me/918768683198" target="_blank" className="text-white font-black text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors border-b-2 border-primary/30 pb-1">
-            Consult a Specialist
+          <Link href="https://wa.me/918768683198" target="_blank" className="btn-secondary py-4 px-10 text-lg bg-white/10 backdrop-blur-md text-white border-white/20 hover:bg-white/20">
+            Plan Your Journey
           </Link>
         </div>
       </div>
