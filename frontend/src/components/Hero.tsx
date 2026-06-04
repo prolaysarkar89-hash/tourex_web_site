@@ -61,12 +61,12 @@ const Hero = () => {
           The Tourex Collective
         </span>
         
-        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-amber-50 mb-10 tracking-tighter drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
+        <h1 className="hero-3d-layer text-6xl sm:text-8xl md:text-[10rem] font-display font-black leading-[0.85] text-green-400 mb-10 tracking-tighter drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
           NORTH<br />
-          <span className="text-primary italic font-normal tracking-normal">Bengal.</span>
+          <span className="text-white italic font-normal tracking-normal">Bengal.</span>
         </h1>
         
-        <p className="hero-3d-layer text-lg sm:text-xl md:text-2xl font-display italic text-amber-50/90 mb-16 max-w-2xl drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)] opacity-95">
+        <p className="hero-3d-layer text-lg sm:text-xl md:text-2xl font-display italic text-green-300 mb-16 max-w-2xl drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)] opacity-95">
           Curating silence and cinematic escapes across the Himalayas.
         </p>
 
